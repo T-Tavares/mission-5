@@ -1,0 +1,6 @@
+database-data
+.env
+
+
+database/docker-composer/*
+!database/docker-composer/docker-compose.yml

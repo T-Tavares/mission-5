@@ -1,0 +1,62 @@
+[
+    {
+        "date": "2024-03-23",
+        "teams": ["devs"],
+        "summary": "Initial talk on technologies and frameworks we are going to use. At this point we are on a experimentational phase. We will try to make a simple working Docker build with Next.js, Typescript, MongoDB and Mongoose ",
+
+        "points": [
+            "Technologies and Frameworks to be used",
+            "Research and Study how to Docker",
+            "Catch up with Typescritp and Next.js - Thiago"
+        ],
+        "actions": [
+            "Understand and Setup Docker",
+            "Experiment with the decided stack and try to make it work before advance"
+        ],
+        "blockers": {
+            "blocker": "Auth error when connecting mongo and mongo-express on docker",
+            "issues": [
+                "https://github.com/mongo-express/mongo-express/issues/809",
+                "https://www.youtube.com/watch?v=cfmPk93mOeo"
+            ],
+            "solutions": [
+                "Using default values for everything on the dockering process of mongo and mongo-express. Not ideal, but it's working.",
+                "Adding the env variable : - ME_CONFIG_MONGODB_URL=mongodb://root:1234@mongo:27017/ \nMatching the login, password and port => mongodb://ADMIN_LOGIN:ADMIN_PASS@mongo:PORT/ "
+            ]
+        }
+    },
+    {
+        "date": "2024-03-25",
+        "teams": ["devs", "uxs"],
+        "summary": "First meeting of devs and uxs. Good start and good vibes. 😎",
+        "points": [
+            "Decided on Daily stand ups",
+            "Walk through the wireframe / prototypes",
+            "User testing and user report completed",
+            "Vlad will be the frontend lead and Thiago will be the backend lead.",
+            "Project folder and file structure init(). Changes might happen as we learn more about Docker and CI/CD"
+        ],
+        "actions": [
+            "Follow up changes on wireframe.",
+            "Working on the hight fidelity prototypes.",
+            "Finish the docker setup."
+        ],
+        "blockers": {
+            "blocker": ["Dockers setup is going slow, but expected."],
+            "issues:": [],
+            "solutions": ["For now... pray that logs errors are easy to understand."]
+        }
+    },
+    {
+        "date": "yyyy-mm-dd => String for Date",
+        "teams": ["devs", "uxs"],
+        "summary": "String with a summary of the meeting",
+        "points": ["Array for bullet points summary"],
+        "actions": ["Array for bullet points on actions from this time on"],
+        "blockers": {
+            "blocker": ["Array of String of block summary"],
+            "issues": ["Arary of strings and/or links of issues or usefull videos."],
+            "solutions": ["Arary of strings and/or links of how we solved the problem."]
+        }
+    }
+]
