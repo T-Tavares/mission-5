@@ -1,6 +1,7 @@
-database-data
+node_modules
+.DS_Store
 .env
 
-
+database-data
 database/docker-composer/*
 !database/docker-composer/docker-compose.yml

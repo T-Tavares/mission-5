@@ -42,9 +42,38 @@
             "Finish the docker setup."
         ],
         "blockers": {
-            "blocker": ["Dockers setup is going slow, but expected."],
-            "issues:": [],
-            "solutions": ["For now... pray that logs errors are easy to understand."]
+            "blocker": ["Dockers setup is going slow, but expected.", "Authentication Error on MongoDB"],
+            "issues:": ["https://www.youtube.com/watch?v=cfmPk93mOeo", "https://www.youtube.com/watch?v=3c-iBn73dDE"],
+            "solutions": [
+                "The 2 issues videos gave a undertanding on how to navigate the docker containers",
+                "Hands on it helped to see how everything works."
+            ]
+        }
+    },
+    {
+        "date": "2024-03-26",
+        "teams": ["devs"],
+        "summary": "Catch up on how the setups were going.",
+        "points": [
+            "Docker Mongo understood and sorted.",
+            "NextJS Structure.",
+            "Backend and Frontend progress and leads talkthrough"
+        ],
+        "actions": [
+            "Docker NextJS setup",
+            "Finish NextJS structure and design layout, expected to be a big setup but we'll keep it simple for the sake of learning",
+            "Understand the big picture of CI/CD and docker pipeline. "
+        ],
+        "blockers": {
+            "blocker": [
+                "Setup NextJS Docker and understand how it all connects. No really a blockers, but a necessary point to understand how everything will flow."
+            ],
+            "issues": [
+                "https://www.youtube.com/watch?v=5UM_GhjMeSk",
+                "https://www.youtube.com/watch?v=3JUsg-WsU9o",
+                "https://github.com/adrianhajdin/ecommerce/"
+            ],
+            "solutions": ["To be sorted..."]
         }
     },
     {

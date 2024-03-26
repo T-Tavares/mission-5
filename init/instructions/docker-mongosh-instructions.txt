@@ -1,0 +1,32 @@
+Check the docker-compose.yml file.
+It runs a network (all containers must be connected to)
+
+# DATABASE - MongoDB
+
+We're using two images
+    mongo => Our database 
+    mongo-express => A frontend to easly access out db (Not strictly necessary)
+
+They are running on the same container and connected to the same network.
+
+Once database is up:
+    To test if everything is working, open the mongo container terminal
+        > docker exec -it mongo bash
+    And run "mongosh" to open Mongo Shell CLI 
+    You'll have to authenticate your connection. In order to do that:
+    Swap to the admin default db and run the db.auth method with the credentials set on the docker-compose file 
+        > use admin
+        > db.auth({user: "root", pwd: "demacia"})
+    Now if you swap to your collection (Notes: If it does not exist it'll be created // Will only persists if you insert any data on it.)
+    You can perform mongosh CRUD operations
+
+    ex::.
+
+        > db.yourcollection.insertOne({})
+        > db.yourcollection.insertMany([{},{}...])
+        > db.yourcollection.find({})
+
+    more on the documentation => https://www.mongodb.com/docs/mongodb-shell/crud/
+
+!important! 
+Keep the collections name lower case and with no dashes or underlines ("-", "_"). I had some problems CRUDing the collections named with those.
