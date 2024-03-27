@@ -28,6 +28,12 @@ Our Meetings are being documented on a json file as a database (agile-meetings.j
 
 [Dockerize NextJS and MongoDB](https://www.youtube.com/watch?v=5UM_GhjMeSk)
 
+[NextJS Client and Server Components](https://dev.to/brdnicolas/understanding-use-client-in-nextjs-enhancing-performance-through-client-side-component-mastery-10dg#:~:text=Server%20components%20handle%20rendering%20operations,the%20application%20of%20%27use%20client.)
+
+[NextJS and Mongoose](https://mongoosejs.com/docs/nextjs.html)
+
+[NextJS / App Router / Typescript / Tailwind](https://www.youtube.com/watch?v=ZVnjOPwW4ZA)
+
 # Dev Technologies
 
 -   Next js / React

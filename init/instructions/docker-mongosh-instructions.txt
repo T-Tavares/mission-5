@@ -28,5 +28,5 @@ Once database is up:
 
     more on the documentation => https://www.mongodb.com/docs/mongodb-shell/crud/
 
-!important!  
+!important! 
 Keep the collections name lower case and with no dashes or underlines ("-", "_"). I had some problems CRUDing the collections named with those.

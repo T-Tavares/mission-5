@@ -1,7 +1,10 @@
 [
     {
+        "_id": 1,
         "date": "2024-03-23",
-        "teams": ["devs"],
+        "duration": 90,
+        "time-window": "3pm to 4:30pm",
+        "teams": ["DEVS"],
         "summary": "Initial talk on technologies and frameworks we are going to use. At this point we are on a experimentational phase. We will try to make a simple working Docker build with Next.js, Typescript, MongoDB and Mongoose ",
 
         "points": [
@@ -26,8 +29,11 @@
         }
     },
     {
+        "_id": 2,
         "date": "2024-03-25",
-        "teams": ["devs", "uxs"],
+        "duration": 90,
+        "time-window": "4pm to 5:30pm",
+        "teams": ["DEVS", "UXS"],
         "summary": "First meeting of devs and uxs. Good start and good vibes. 😎",
         "points": [
             "Decided on Daily stand ups",
@@ -51,8 +57,11 @@
         }
     },
     {
+        "_id": 3,
         "date": "2024-03-26",
-        "teams": ["devs"],
+        "duration": 40,
+        "time-window": "1:20pm to 2pm",
+        "teams": ["DEVS"],
         "summary": "Catch up on how the setups were going.",
         "points": [
             "Docker Mongo understood and sorted.",
@@ -77,8 +86,59 @@
         }
     },
     {
+        "_id": 4,
+        "date": "2024-03-26",
+        "duration": 210,
+        "time-window": "1pm to 4:30pm",
+        "teams": ["UXS"],
+        "summary": "Catch up meeting. No blockers or problems so far. Glimpsy on the Design.",
+        "points": ["Feasability Check", "Design v1 (Looking Beaaautiful!)"]
+    },
+    {
+        "_id": 5,
+        "date": "2024-03-26",
+        "duration": 25,
+        "time-window": "5pm to 5:25pm",
+        "teams": ["DEVS", "UXS"],
+        "summary": "Catch up meeting. No blockers or problems so far. Glimpsy on the Design.",
+        "points": ["Feasability Check", "Design v1 (Looking Beaaautiful!)"]
+    },
+    {
+        "_id": 6,
+        "date": "2024-03-26",
+        "duration": 15,
+        "time-window": "8pm to 8:15pm",
+        "teams": ["DEVS"],
+        "summary": "Catch up dev meeting on how we are on the setup",
+        "points": ["Guidance on Next JS Erros and how it works", "Progress checkpoint for Setup nearly done."],
+        "blockers": {
+            "blocker": ["docker compose watch flag error"],
+            "issues": ["https://github.com/docker/compose/issues/11102"],
+            "solutions": [
+                "It is actually a bug on docker, as shown on the issues link.",
+                "In short, there should be a way to communicate the files on the docker image to the local files.",
+                "Workarounds this issue were too messy or hard to understand",
+                "Decided to keep going with NextJS dev running out of the container for practicity"
+            ]
+        }
+    },
+
+    {
+        "_id": 7,
+        "date": "2024-03-27",
+        "duration": 25,
+        "time-window": "from 5pm to 5:25pm",
+        "teams": ["DEVS", "UXS"],
+        "summary": "Catch up meeting. High Fidelity MVP Design and Devs setup is ready. Now is show time!",
+        "points": ["High fidelity design done 😎", "Dev Setup done 😎"],
+        "actions": []
+    },
+    {
+        "_id": "Number => Unique ID",
         "date": "yyyy-mm-dd => String for Date",
-        "teams": ["devs", "uxs"],
+        "duration": "Number => in minutes",
+        "time-window": "String with time window => Xpm to Ypm",
+        "teams": ["DEVS", "UXS"],
         "summary": "String with a summary of the meeting",
         "points": ["Array for bullet points summary"],
         "actions": ["Array for bullet points on actions from this time on"],
