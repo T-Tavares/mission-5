@@ -1,22 +1,14 @@
-import React from 'react';
-import reportsDB from '../../../init/agile-meetings.json';
+import reportsDB from '@/../init/agile-meetings.json';
+import dbConnect from '@/api/services/dbConnect';
+// import {T_Report} from '@/api/models/reportsModel';
+import reportsModel from '@/api/models/reportsModel';
 
-// ? Though I would need a Type
-
-// type T_report = {
-//     _id: Number;
-//     date: String;
-//     duration: Number;
-//     teams: Array<'uxs' | 'devs'>;
-//     summary: String;
-//     points?: Array<String>;
-//     actions?: Array<String>;
-//     blockers?: {
-//         blocker?: Array<String>;
-//         issues?: Array<String>;
-//         solutions?: Array<String>;
-//     };
-// };
+async function fetchReports() {
+    await dbConnect();
+    const reports = await reportsModel.find({});
+    console.log(reports);
+    // return reports;
+}
 
 const ReportCards = reportsDB
     .map(report => {
@@ -65,7 +57,9 @@ const ReportCards = reportsDB
 // ------------------------ REPORTS PAGE  ------------------------- //
 // ---------------------------------------------------------------- //
 
-const ReportsPage = () => {
+const ReportsPage = async () => {
+    fetchReports();
+
     return (
         <div>
             <h1 className="text-4xl text-center pt-5 text-primary">Reports: Agile Meetings</h1>
