@@ -1,14 +1,6 @@
+'use client';
 import reportsDB from '@/../init/agile-meetings.json';
-import dbConnect from '@/api/services/dbConnect';
-// import {T_Report} from '@/api/models/reportsModel';
-import reportsModel from '@/api/models/reportsModel';
-
-async function fetchReports() {
-    await dbConnect();
-    const reports = await reportsModel.find({});
-    console.log(reports);
-    // return reports;
-}
+import {useState} from 'react';
 
 const ReportCards = reportsDB
     .map(report => {
@@ -58,6 +50,14 @@ const ReportCards = reportsDB
 // ---------------------------------------------------------------- //
 
 const ReportsPage = async () => {
+    const [reports, setReports] = useState([]);
+
+    const fetchReports = async () => {
+        const res = await fetch('http://localhost:3001/api/agile/reports');
+        const data = await res.json();
+        setReports(data);
+    };
+
     fetchReports();
 
     return (

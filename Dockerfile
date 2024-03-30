@@ -1,20 +1,21 @@
-# Install node version
+# Tried to do a compose build step but was blocked with paths and permissions 
+# I understand is not advised to ship the whole thing over and over again. 
+# But for simplicity and considering the size of the project I decided to do it this way. 
+
+# Fetch Node and start container
 FROM node:20-alpine
-
-# Set working directory
+# Select the working directory
 WORKDIR /app
-
-# Copy package.json into image
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install 
-
-# Copy source files
+# Sorting the dependencies
+COPY package.json /.
+COPY package-lock.json /.
+RUN npm install
+# Copy the rest of the files before building the app
 COPY . .
-
-# Port
+# Build the app
+RUN npm run build
+# Copy the build files
+COPY . .
+# Expose the port and start the app
 EXPOSE 3000
-
-# Run application locally
-CMD npm run dev
+CMD npm run start

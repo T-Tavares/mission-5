@@ -8,23 +8,23 @@ set -e
 mongosh <<EOF 
 
 use admin
-db.auth($MONGO_INITDB_ROOT_USERNAME , $MONGO_INITDB_ROOT_PASSWORD)
+db.auth("$MONGO_INITDB_ROOT_USERNAME" , "$MONGO_INITDB_ROOT_PASSWORD")
 
 use $MONGO_INITDB_DB
 
 db.createUser({
-    user: $MONGO_USER,
-    pwd: $MONGO_PASS,
+    user: "$MONGO_USER",
+    pwd: "$MONGO_PASS",
     roles: [{
-        role: 'readWrite',
-        db: $MONGO_INITDB_DB
+        role: "readWrite",
+        db: "$MONGO_INITDB_DB"
     }]
 })
 
+db.auth($MONGO_USER , $MONGO_PASS)
+
 db.createCollection(reports)
 db.createCollection(locations)
-
-db.auth($MONGO_USER , $MONGO_PASS)
 
 db.reports.insertOne({
     "report": "Init Data added to report collection. Please delete me."

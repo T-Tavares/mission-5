@@ -40,6 +40,8 @@ Our Meetings are being documented on a json file as a database (agile-meetings.j
 
 [Github Actions CI/DC with Docker, NextJS, MongoDB and Google Run - (article)](https://niranjanakella.medium.com/deployed-my-nextjs-app-on-gcp-cloud-run-with-in-minutes-using-github-ca24d4a8713b)
 
+[Fetch MongoDB Data from NextJS API](https://www.makeuseof.com/nextjs-mongodb-mongoose-data-management-store-fetch/)
+
 # Dev Technologies
 
 -   Next js / React
