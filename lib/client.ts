@@ -1,21 +1,27 @@
-import {MongoClient} from 'mongodb';
+import mongoose from 'mongoose';
 
-async function getClient() {
-    const auth = {
-        user: process.env.MONGO_USER,
-        pass: process.env.MONGO_PASS,
-        db: process.env.MONGO_INITDB_DB,
-    };
+const URI = process.env.MONGODB_URI;
+const cached: {connection?: typeof mongoose; promise?: Promise<typeof mongoose>} = {};
 
-    try {
-        // const uri = `mongodb://${auth.user}:${auth.pass}@localhost:27017/${auth.db}?authSource=${auth.db}`;
-        // const uri = `mongodb://${auth.user}:${auth.pass}@0.0.0.0:27017/${auth.db}?authSource=${auth.db}`;
-        const uri = `mongodb://${auth.user}:${auth.pass}@mongo:27017/${auth.db}?authSource=${auth.db}`;
-        const client = new MongoClient(uri);
-        return client.connect(); // Returns a promise
-    } catch (err) {
-        console.error(err);
-    }
+// export default async function connectToDatabase() {
+//     if (!URI) throw new Error('MongoDB URI is not defined on your .env file');
+//     if (cached.connection) return cached.connection;
+//     if (!cached.promise) {
+//         const opts = {bufferCommands: false};
+//         const promise = mongoose.connect(URI, opts);
+//         cached.promise = promise;
+//     }
+//     try {
+//         cached.connection = await cached.promise;
+//     } catch (error) {
+//         cached.promise = undefined;
+//         throw new Error('Could not connect to MongoDB : ' + error);
+//     }
+//     return cached.connection;
+// }
+
+export default async function connectToDatabase() {
+    if (!URI) throw new Error('MongoDB URI is not defined on your .env file');
+    const clientPromise = mongoose.connect(URI, {bufferCommands: false});
+    return clientPromise;
 }
-
-export default getClient;
