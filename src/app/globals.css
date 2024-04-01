@@ -4,10 +4,17 @@
 
 :root {
     --font: #eee;
-    --bg-colour: #f5f5f3;
+    --bg-colour: #ffffff;
     --primary-colour: #7e3b98;
     --secondary-colour: #c499d0;
     --action-colour: #72f1c3;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: none;
 }
 
 * {
@@ -22,9 +29,7 @@ body {
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
+    
 }
 
 /* prettier-ignore */
@@ -41,4 +46,8 @@ body {
     .border-primary {border-color: var(--primary-colour);}
     .border-secondary {border-color: var(--secondary-colour);}
     .border-action {border-color: var(--action-colour);}
+}
+
+.roboto {
+    font-family: var(--font-roboto);
 }
