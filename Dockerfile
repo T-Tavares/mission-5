@@ -3,19 +3,19 @@
 # But for simplicity and considering the size of the project I decided to do it this way. 
 
 # Fetch Node and start container
-FROM node:latest
+FROM node:21-alpine3.18
 # Select the working directory
 WORKDIR /app
 # Sorting the dependencies
-COPY package.json /.
-COPY package-lock.json /.
+COPY package.json /app
+COPY package-lock.json /app
 RUN npm install
 # Copy the rest of the files before building the app
-COPY . .
+COPY . /app
 # Build the app
 RUN npm run build
 # Copy the build files
-COPY . .
+COPY . /app
 # Expose the port and start the app
 EXPOSE 3000
-CMD npm run start
+CMD ["npm", "run", "start"]

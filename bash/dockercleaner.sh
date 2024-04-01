@@ -6,8 +6,8 @@
 
 # WARNING!
 
-docker stop web
-# docker stop web mongo 
+# docker stop web
+docker stop web mongo 
 
 echo y | docker container prune
 
@@ -15,8 +15,8 @@ docker container rm web -f # Keep mongo
 docker container rm mongo -f
 
 #  The next two lines will clear volumes => WARNING Data will be lost ( Comment / Uncomment as needed )
-# echo y | docker volume prune
-# docker volume rm zenergy-volume -f
+echo y | docker volume prune
+docker volume rm zenergy-volume -f
 
 # echo y | docker network prune
 docker network rm zenergy-network -f

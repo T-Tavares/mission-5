@@ -1,10 +1,17 @@
 import {NextResponse} from 'next/server';
-// import connectToDatabase from '../_lib/client';
+import connectToDatabase from '../_lib/client';
 
 export async function GET() {
-    // const client = await connectToDatabase();
-    // const reports = client.db('zenergy-db').collection('reports').find({}).toArray();
+    const client = await connectToDatabase();
+    let reports;
+    try {
+        const db = client.db('zenergy-db');
+        const collection = db.collection('reports');
+        reports = await collection.find().toArray();
+        await client.close();
+    } catch (err) {
+        throw new Error('Error while fetching reports: ');
+    }
 
-    return NextResponse.json({message: 'hellow world'});
-    // return NextResponse.json({data: 'test', reports: (await reports) ? reports : 'No reports found!'});
+    return NextResponse.json({reports: reports ? reports : {error: 'No reports found!'}});
 }

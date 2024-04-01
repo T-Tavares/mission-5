@@ -1,46 +1,55 @@
 version: '3.8'
 
-# Create Network for DB
-networks:
-    zenergy-network:
-        name: zenergy-network
-
-# Z-Energy Database Volume
-volumes:
-    zenergy:
-        name: zenergy-volume
-
 services:
-    # MongoDB Service
-    mongo:
-        image: mongo:latest
-        container_name: mongo
-        ports:
-            - 27017:27017
-        networks:
-            - zenergy-network
-        restart: always
-        environment:
-            - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-            - MONGO_INITDB_DB=${MONGO_INITDB_DB}
-            - MONGODB_URI=${MONGODB_URI}
-            - MONGO_USER=${MONGO_USER}
-            - MONGO_PASS=${MONGO_PASS}
-        volumes:
-            - 'zenergy:/data/db'
-            - './mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
-
     # Next JS Web Service
-
     web:
         container_name: web
-        depends_on:
-            - mongo
+
         build:
             context: .
             dockerfile: Dockerfile
-        networks:
-            - zenergy-network
+        # networks:
+        #     - zenergy-network
         ports:
             - 3000:3000
+# networks:
+#     zenergy-network:
+#         name: zenergy-network
+#
+# # MongoDB Service
+# # ###### That's just a reference Code to a Mongo Image Service. ###### # #
+
+# # Tried to have mongo service in the same docker-compose file but it was not working
+# # Due to how NextJS works and how Docker build the web image. Next JS would always try to connect
+# # to the mongo service before it was ready. So I had the database working on it's own.
+# # Nevertheless... I believe it's also a good practice to have the database on it's own place. Prove me wrong.
+
+# mongo:
+#     image: mongo:latest
+#     container_name: mongo
+#     ports:
+#         - 27017:27017
+#     networks:
+#         - zenergy-network
+#     restart: always
+#     environment:
+#         - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+#         - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+#         - MONGO_INITDB_DB=${MONGO_INITDB_DB}
+#         - MONGODB_URI=${MONGODB_URI}
+#         - MONGO_USER=${MONGO_USER}
+#         - MONGO_PASS=${MONGO_PASS}
+#     volumes:
+#         - 'zenergy:/data/db'
+#         - './mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
+#
+
+# # The following Volume was mostly part of the Mongo Service
+# # But since I had to remove it, I'm keeping it here for future reference.
+
+# #  Create Network for DB
+
+# # Z-Energy Database Volume
+# volumes:
+#     zenergy:
+#         name: zenergy-volume
