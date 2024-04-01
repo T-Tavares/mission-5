@@ -1,4 +1,4 @@
-import {T_Report} from '@/app/_lib/modules/T_Report';
+import {T_Report} from '@/app/_lib/types/T_Report';
 
 export default function ReportCard({report}: {report: T_Report}) {
     const currKey = report._id.toString();
