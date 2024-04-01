@@ -3,7 +3,7 @@
 # But for simplicity and considering the size of the project I decided to do it this way. 
 
 # Fetch Node and start container
-FROM node:20-alpine
+FROM node:latest
 # Select the working directory
 WORKDIR /app
 # Sorting the dependencies

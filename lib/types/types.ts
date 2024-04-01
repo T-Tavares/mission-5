@@ -1,5 +1,5 @@
 export type T_Report = {
-    _id: string;
+    _id: any;
     date: string;
     teams: string[];
     duration: number;

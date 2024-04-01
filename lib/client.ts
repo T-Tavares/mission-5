@@ -8,7 +8,9 @@ async function getClient() {
     };
 
     try {
-        const uri = `mongodb://${auth.user}:${auth.pass}@localhost:27017/${auth.db}?authSource=${auth.db}`;
+        // const uri = `mongodb://${auth.user}:${auth.pass}@localhost:27017/${auth.db}?authSource=${auth.db}`;
+        // const uri = `mongodb://${auth.user}:${auth.pass}@0.0.0.0:27017/${auth.db}?authSource=${auth.db}`;
+        const uri = `mongodb://${auth.user}:${auth.pass}@mongo:27017/${auth.db}?authSource=${auth.db}`;
         const client = new MongoClient(uri);
         return client.connect(); // Returns a promise
     } catch (err) {

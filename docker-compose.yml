@@ -32,10 +32,12 @@ services:
             - './mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
 
     # Next JS Web Service
+
     web:
         container_name: web
         depends_on:
-            - mongo
+            mongo:
+                condition: service_completed_successfully
         build:
             context: .
             dockerfile: Dockerfile

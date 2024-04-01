@@ -148,6 +148,27 @@
         }
     },
     {
+        "_id": 9,
+        "date": "2024-03-31",
+        "duration": 15,
+        "window": "from 9:30pm to 9:45pm",
+        "teams": ["DEVS"],
+        "summary": "DEV - AGILE StandUp - To check on progress and Blockers",
+        "points": [
+            "Frontend looking sharp, Nav and Footer good to go.",
+            "NextJS backend can be a B*** while you're learning. But it's fun!!!"
+        ],
+        "actions": [
+            "Have it running on the cloud by the weekend, did not really happen.",
+            "Merge meeting set for 1st of April (tomorrow)."
+        ],
+        "blockers": {
+            "blocker": ["Backend, you solve one problem. Two more spawn."],
+            "issues": [],
+            "solutions": []
+        }
+    },
+    {
         "_id": "Number => Unique ID",
         "date": "yyyy-mm-dd => String for Date",
         "duration": "Number => in minutes",

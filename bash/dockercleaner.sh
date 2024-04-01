@@ -12,8 +12,8 @@ echo y | docker container prune
 docker container rm zenergy mongo mission5-web -f
 
 #  The next two lines will clear volumes => WARNING Data will be lost ( Comment / Uncomment as needed )
-echo y | docker volume prune
-docker volume rm zenergy-volume -f
+# echo y | docker volume prune
+# docker volume rm zenergy-volume -f
 
 echo y | docker network prune
 docker network rm zenergy-network -f
