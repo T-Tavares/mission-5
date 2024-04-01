@@ -1,5 +1,14 @@
 version: '3.8'
 
+networks:
+    zenergy-network:
+        name: zenergy-network
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.18.0.0/16
+                  gateway: 172.18.0.1
+
 services:
     # Next JS Web Service
     web:
@@ -8,14 +17,10 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        # networks:
-        #     - zenergy-network
+        networks:
+            - zenergy-network
         ports:
             - 3000:3000
-# networks:
-#     zenergy-network:
-#         name: zenergy-network
-#
 # # MongoDB Service
 # # ###### That's just a reference Code to a Mongo Image Service. ###### # #
 

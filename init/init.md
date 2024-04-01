@@ -44,6 +44,8 @@ Our Meetings are being documented on a json file as a database (agile-meetings.j
 
 [Next JS - API Routes (video)](https://www.youtube.com/watch?v=gEB3ckYeZF4)
 
+[NextJS problem with having API and App together](https://github.com/vercel/next.js/discussions/13316)
+
 # Dev Technologies
 
 -   Next js / React

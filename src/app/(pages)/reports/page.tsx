@@ -1,11 +1,13 @@
-// import reportsDB from '../../_lib/agile-meetings.json';
 import ReportsList from './_components/ReportsList';
+import {Suspense} from 'react';
 
-const ReportsPage = () => {
+const ReportsPage = async () => {
     return (
         <div>
             <h1 className="text-4xl text-center pt-5 text-primary">Reports: Agile Meetings</h1>
-            <ReportsList />
+            <Suspense fallback={<p>Loading...</p>}>
+                <ReportsList />
+            </Suspense>
         </div>
     );
 };
