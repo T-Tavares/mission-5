@@ -1,5 +1,5 @@
 import React from 'react';
-import reportsDB from '../../../init/agile-meetings.json';
+import reportsDB from '../../_lib/agile-meetings.json';
 
 // ? Though I would need a Type
 

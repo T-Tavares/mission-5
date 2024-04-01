@@ -1,12 +1,13 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import reportsDB from '../../init/agile-meetings.json';
+import reportsDB from './_lib/agile-meetings.json';
+import Hero from './_components/hero';
+
 
 export default function Home() {
     return (
-        <main>
-            <h1>Hello MF</h1>
-            <Link href="/reports">Reports</Link>
+        <main className=''>
+            {/* <Link href="/reports">Reports</Link> */}
+            <Hero />
         </main>
     );
 }
