@@ -3,11 +3,6 @@ version: '3.8'
 networks:
     zenergy-network:
         name: zenergy-network
-        driver: bridge
-        ipam:
-            config:
-                - subnet: 172.18.0.0/16
-                  gateway: 172.18.0.1
 
 services:
     # Next JS Web Service
