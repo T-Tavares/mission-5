@@ -46,6 +46,8 @@ Our Meetings are being documented on a json file as a database (agile-meetings.j
 
 [NextJS problem with having API and App together](https://github.com/vercel/next.js/discussions/13316)
 
+[Making pages/endpoints Dynamic - For when you have to rely on fetching that data on command](https://stackoverflow.com/questions/77511955/build-next-js-error-occurred-prerendering-page-api-user)
+
 # Dev Technologies
 
 -   Next js / React

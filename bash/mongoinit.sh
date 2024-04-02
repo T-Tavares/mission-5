@@ -4,9 +4,6 @@
 # Safety clause, will exit the script if the db is set
 set -e 
 
-
-
-# EOF -  "here document" or "heredoc" : Allows passing commands to a CLI (mongosh in our case)
 mongosh <<EOF 
 
 use admin
@@ -26,6 +23,7 @@ db.createUser({
 db.auth($MONGO_USER , $MONGO_PASS)
 
 )
+db.createCollection(reports)
 db.createCollection(locations)
 
 db.reports.insertOne({
@@ -36,5 +34,5 @@ db.locations.insertOne({
     "report": "Init Data added to report collection. Please delete me."
 })
 
-
 EOF
+

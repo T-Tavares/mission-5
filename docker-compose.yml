@@ -2,29 +2,23 @@ version: '3.8'
 name: zenergy
 
 #  Create Network for DB
-
 networks:
     zenergy-network:
         name: zenergy-network
         driver: bridge
-        # ipam:
-        #     config:
-        #         - subnet: 172.18.0.0/16
-        #           gateway: 172.18.0.1
 
 # Z-Energy Database Volume
-
 volumes:
     zenergy:
         name: zenergy-volume
 
-#  Services
-
+#  Web Service
 services:
     # Next JS Web Service
     web:
         container_name: web
-
+        depends_on:
+            - mongo
         build:
             context: .
             dockerfile: Dockerfile
@@ -33,18 +27,12 @@ services:
         ports:
             - 3000:3000
         volumes:
-            - ./src/:/zenergy/src
+            - ./src:/zenergy/src
 
     # # MongoDB Service
-    # # ###### That's just a reference Code to a Mongo Image Service. ###### # #
-
-    # # Tried to have mongo service in the same docker-compose file but it was not working
-    # # Due to how NextJS works and how Docker build the web image. Next JS would always try to connect
-    # # to the mongo service before it was ready. So I had the database working on it's own.
-    # # Nevertheless... I believe it's also a good practice to have the database on it's own place. Prove me wrong.
 
     mongo:
-        image: mongo:latest
+        image: mongo
         container_name: mongo
         ports:
             - 27017:27017
@@ -55,12 +43,11 @@ services:
             - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
             - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
             - MONGO_INITDB_DB=${MONGO_INITDB_DB}
-            - MONGODB_URI=${MONGODB_URI}
+            - MONGODB_URI_ROOT=${MONGODB_URI_ROOT}
+            - MONGODB_URI_ADMIN=${MONGODB_URI_ADMIN}
             - MONGO_USER=${MONGO_USER}
             - MONGO_PASS=${MONGO_PASS}
         volumes:
             - 'zenergy:/data/db'
+            # If there's no volume uncomment the next line. This script will create a admin user and add initial data to the DB
             - './bash/mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
-# The following Volume was mostly part of the Mongo Service
-# But since I had to remove it, I'm keeping it here for future reference.
-
