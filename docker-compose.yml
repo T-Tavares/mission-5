@@ -1,13 +1,24 @@
 version: '3.8'
+name: zenergy
+
+#  Create Network for DB
 
 networks:
     zenergy-network:
         name: zenergy-network
         driver: bridge
-        ipam:
-            config:
-                - subnet: 172.18.0.0/16
-                  gateway: 172.18.0.1
+        # ipam:
+        #     config:
+        #         - subnet: 172.18.0.0/16
+        #           gateway: 172.18.0.1
+
+# Z-Energy Database Volume
+
+volumes:
+    zenergy:
+        name: zenergy-volume
+
+#  Services
 
 services:
     # Next JS Web Service
@@ -21,40 +32,35 @@ services:
             - zenergy-network
         ports:
             - 3000:3000
-# # MongoDB Service
-# # ###### That's just a reference Code to a Mongo Image Service. ###### # #
+        volumes:
+            - ./src/:/zenergy/src
 
-# # Tried to have mongo service in the same docker-compose file but it was not working
-# # Due to how NextJS works and how Docker build the web image. Next JS would always try to connect
-# # to the mongo service before it was ready. So I had the database working on it's own.
-# # Nevertheless... I believe it's also a good practice to have the database on it's own place. Prove me wrong.
+    # # MongoDB Service
+    # # ###### That's just a reference Code to a Mongo Image Service. ###### # #
 
-# mongo:
-#     image: mongo:latest
-#     container_name: mongo
-#     ports:
-#         - 27017:27017
-#     networks:
-#         - zenergy-network
-#     restart: always
-#     environment:
-#         - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
-#         - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
-#         - MONGO_INITDB_DB=${MONGO_INITDB_DB}
-#         - MONGODB_URI=${MONGODB_URI}
-#         - MONGO_USER=${MONGO_USER}
-#         - MONGO_PASS=${MONGO_PASS}
-#     volumes:
-#         - 'zenergy:/data/db'
-#         - './mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
-#
+    # # Tried to have mongo service in the same docker-compose file but it was not working
+    # # Due to how NextJS works and how Docker build the web image. Next JS would always try to connect
+    # # to the mongo service before it was ready. So I had the database working on it's own.
+    # # Nevertheless... I believe it's also a good practice to have the database on it's own place. Prove me wrong.
 
-# # The following Volume was mostly part of the Mongo Service
-# # But since I had to remove it, I'm keeping it here for future reference.
+    mongo:
+        image: mongo:latest
+        container_name: mongo
+        ports:
+            - 27017:27017
+        networks:
+            - zenergy-network
+        restart: always
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+            - MONGO_INITDB_DB=${MONGO_INITDB_DB}
+            - MONGODB_URI=${MONGODB_URI}
+            - MONGO_USER=${MONGO_USER}
+            - MONGO_PASS=${MONGO_PASS}
+        volumes:
+            - 'zenergy:/data/db'
+            - './bash/mongoinit.sh/:/docker-entrypoint-initdb.d/mongoinit.sh:ro'
+# The following Volume was mostly part of the Mongo Service
+# But since I had to remove it, I'm keeping it here for future reference.
 
-# #  Create Network for DB
-
-# # Z-Energy Database Volume
-# volumes:
-#     zenergy:
-#         name: zenergy-volume

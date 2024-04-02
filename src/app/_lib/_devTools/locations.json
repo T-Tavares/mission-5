@@ -1,232 +1,136 @@
 [
   {
+    "name": "Z Energy Services",
+    "address": "67 Street Avenue",
+    "price": 5.5,
+    "openingHours": {
+      "from": 10,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -45,
+      "lon": 171
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "24 Wonderland",
+    "price": 5.5,
+    "openingHours": {
+      "from": 9,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -46,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "5 Main Street",
+    "price": 5.5,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 175
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
     "name": "Gas Station",
-    "address": "89 Street Avenue",
-    "price": 4.5,
+    "address": "37 The best place",
+    "price": 4.3,
     "openingHours": {
       "from": 7,
       "to": 21
     },
     "geocode": {
       "lat": -43,
-      "lon": 172
+      "lon": 171
     },
     "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "26 Wonderland",
-    "price": 6.2,
-    "openingHours": {
-      "from": 6,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 173
-    },
-    "type": "Service Station",
     "services": {
       "trailerHire": false,
       "carWash": true,
       "tirePressure": true,
-      "foodnDrink": false,
+      "foodnDrink": true,
       "toilet": true,
       "ATM": false,
       "EVcharging": true,
       "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "67 Street Avenue",
-    "price": 5.99,
-    "openingHours": {
-      "from": 7,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -35,
-      "lon": 172
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy",
-    "address": "16 This place is amazing",
-    "price": 5.99,
-    "openingHours": {
-      "from": 8,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -39,
-      "lon": 175
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "12 Street Avenue",
+    "address": "13 This place is amazing",
     "price": 6.2,
     "openingHours": {
-      "from": 9,
-      "to": 19
+      "from": 8,
+      "to": 21
     },
     "geocode": {
-      "lat": -42,
-      "lon": 176
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "14 This place is amazing",
-    "price": 4.8,
-    "openingHours": {
-      "from": 10,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 172
+      "lat": -41,
+      "lon": 171
     },
     "type": "Truck Stop",
     "services": {
       "trailerHire": false,
       "carWash": false,
-      "tirePressure": false,
+      "tirePressure": true,
       "foodnDrink": true,
-      "toilet": true,
+      "toilet": false,
       "ATM": false,
       "EVcharging": true,
       "LPGbottleSwap": false
     }
   },
   {
-    "name": "Service Station",
-    "address": "38 The best place",
-    "price": 5.99,
+    "name": "Z Energy Station",
+    "address": "23 Street Avenue",
+    "price": 7.5,
     "openingHours": {
-      "from": 8,
+      "from": 6,
       "to": 20
     },
     "geocode": {
-      "lat": -37,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "45 Street Avenue",
-    "price": 5.99,
-    "openingHours": {
-      "from": 6,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "37 The best place",
-    "price": 7,
-    "openingHours": {
-      "from": 6,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -47,
+      "lat": -44,
       "lon": 171
     },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "23 Street Avenue",
-    "price": 5.5,
-    "openingHours": {
-      "from": 6,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -36,
-      "lon": 176
-    },
     "type": "Service Station",
     "services": {
       "trailerHire": true,
@@ -234,285 +138,69 @@
       "tirePressure": false,
       "foodnDrink": false,
       "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "46 The best place",
-    "price": 5.99,
-    "openingHours": {
-      "from": 9,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -47,
-      "lon": 177
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
       "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "13 This place is amazing",
-    "price": 7.5,
-    "openingHours": {
-      "from": 8,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -35,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
       "EVcharging": false,
-      "LPGbottleSwap": true
+      "LPGbottleSwap": false
     }
   },
   {
     "name": "Z Energy Services",
-    "address": "38 The best place",
-    "price": 4.5,
+    "address": "34 The best place",
+    "price": 5.5,
     "openingHours": {
       "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -34,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "45 The best place",
-    "price": 7,
-    "openingHours": {
-      "from": 10,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -45,
-      "lon": 173
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "35 The best place",
-    "price": 5.99,
-    "openingHours": {
-      "from": 7,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -34,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "45 Street Avenue",
-    "price": 7.5,
-    "openingHours": {
-      "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -35,
-      "lon": 178
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "12 This place is amazing",
-    "price": 4.3,
-    "openingHours": {
-      "from": 6,
       "to": 21
     },
     "geocode": {
       "lat": -46,
-      "lon": 171
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "26 Wonderland",
-    "price": 4.5,
-    "openingHours": {
-      "from": 10,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -35,
-      "lon": 171
+      "lon": 176
     },
     "type": "Truck Stop",
     "services": {
       "trailerHire": true,
       "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": true,
       "EVcharging": false,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy Services",
-    "address": "24 Wonderland",
-    "price": 7.5,
+    "address": "45 Street Avenue",
+    "price": 6.5,
     "openingHours": {
       "from": 8,
       "to": 19
     },
     "geocode": {
       "lat": -36,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "12 Street Avenue",
-    "price": 4.5,
-    "openingHours": {
-      "from": 10,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "46 The best place",
-    "price": 4.8,
-    "openingHours": {
-      "from": 9,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 176
+      "lon": 175
     },
     "type": "Service Station",
     "services": {
-      "trailerHire": false,
+      "trailerHire": true,
       "carWash": true,
       "tirePressure": true,
-      "foodnDrink": false,
+      "foodnDrink": true,
       "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
     }
   },
   {
-    "name": "Gas Station",
-    "address": "26 Wonderland",
-    "price": 5.5,
+    "name": "Service Station",
+    "address": "35 The best place",
+    "price": 4.8,
     "openingHours": {
-      "from": 9,
-      "to": 22
+      "from": 8,
+      "to": 19
     },
     "geocode": {
-      "lat": -42,
+      "lat": -38,
       "lon": 177
     },
     "type": "Truck Stop",
@@ -520,103 +208,103 @@
       "trailerHire": true,
       "carWash": true,
       "tirePressure": false,
-      "foodnDrink": true,
+      "foodnDrink": false,
       "toilet": true,
       "ATM": true,
       "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "27 Wonderland",
+    "price": 5.5,
+    "openingHours": {
+      "from": 7,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 177
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "38 The best place",
+    "price": 7.5,
+    "openingHours": {
+      "from": 6,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -40,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "16 This place is amazing",
+    "price": 7,
+    "openingHours": {
+      "from": 7,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 177
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy Station",
-    "address": "36 The best place",
-    "price": 5.5,
-    "openingHours": {
-      "from": 9,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 173
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "2 Main Street",
-    "price": 5.5,
-    "openingHours": {
-      "from": 8,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "27 Wonderland",
-    "price": 6.2,
-    "openingHours": {
-      "from": 9,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -45,
-      "lon": 173
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "3 Main Street",
+    "address": "34 The best place",
     "price": 5.5,
     "openingHours": {
       "from": 7,
       "to": 22
     },
     "geocode": {
-      "lat": -45,
-      "lon": 176
+      "lat": -38,
+      "lon": 175
     },
-    "type": "Truck Stop",
+    "type": "Service Station",
     "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
       "toilet": true,
       "ATM": false,
       "EVcharging": true,
@@ -624,46 +312,22 @@
     }
   },
   {
-    "name": "Z Energy",
-    "address": "2 Main Street",
-    "price": 6.2,
-    "openingHours": {
-      "from": 10,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -42,
-      "lon": 173
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
     "name": "Service Station",
-    "address": "12 Street Avenue",
-    "price": 4.3,
+    "address": "26 Wonderland",
+    "price": 7.5,
     "openingHours": {
-      "from": 10,
-      "to": 19
+      "from": 7,
+      "to": 18
     },
     "geocode": {
-      "lat": -43,
-      "lon": 172
+      "lat": -45,
+      "lon": 171
     },
     "type": "Service Station",
     "services": {
       "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
+      "carWash": false,
+      "tirePressure": false,
       "foodnDrink": true,
       "toilet": false,
       "ATM": false,
@@ -672,93 +336,45 @@
     }
   },
   {
-    "name": "Service Station",
-    "address": "2 Main Street",
-    "price": 5.5,
-    "openingHours": {
-      "from": 8,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Station",
+    "name": "Z Energy",
     "address": "23 Wonderland",
     "price": 4.3,
     "openingHours": {
       "from": 7,
-      "to": 21
+      "to": 19
     },
     "geocode": {
-      "lat": -38,
-      "lon": 177
+      "lat": -46,
+      "lon": 173
     },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "37 The best place",
-    "price": 6.5,
-    "openingHours": {
-      "from": 7,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -38,
-      "lon": 175
-    },
-    "type": "Truck Stop",
+    "type": "Service Station",
     "services": {
       "trailerHire": false,
       "carWash": false,
       "tirePressure": false,
       "foodnDrink": false,
       "toilet": false,
-      "ATM": false,
+      "ATM": true,
       "EVcharging": true,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy",
-    "address": "12 Street Avenue",
-    "price": 6.5,
+    "address": "27 Wonderland",
+    "price": 4.5,
     "openingHours": {
       "from": 10,
-      "to": 18
+      "to": 21
     },
     "geocode": {
-      "lat": -45,
-      "lon": 177
+      "lat": -47,
+      "lon": 171
     },
-    "type": "Truck Stop",
+    "type": "Service Station",
     "services": {
       "trailerHire": false,
-      "carWash": false,
+      "carWash": true,
       "tirePressure": true,
       "foodnDrink": true,
       "toilet": false,
@@ -769,831 +385,183 @@
   },
   {
     "name": "Z Energy Station",
-    "address": "35 The best place",
-    "price": 4.5,
+    "address": "37 The best place",
+    "price": 7.5,
     "openingHours": {
-      "from": 6,
-      "to": 18
+      "from": 10,
+      "to": 22
     },
     "geocode": {
       "lat": -46,
+      "lon": 172
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "36 The best place",
+    "price": 5.99,
+    "openingHours": {
+      "from": 9,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -41,
       "lon": 171
     },
     "type": "Service Station",
     "services": {
-      "trailerHire": true,
+      "trailerHire": false,
       "carWash": false,
       "tirePressure": true,
       "foodnDrink": true,
       "toilet": false,
       "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "25 Wonderland",
-    "price": 4.8,
-    "openingHours": {
-      "from": 8,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -42,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
       "EVcharging": false,
       "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "12 This place is amazing",
-    "price": 4.5,
-    "openingHours": {
-      "from": 6,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -39,
-      "lon": 173
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
     }
   },
   {
     "name": "Gas Station",
-    "address": "14 This place is amazing",
-    "price": 5.99,
-    "openingHours": {
-      "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -36,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "27 Wonderland",
+    "address": "2 Main Street",
     "price": 4.5,
     "openingHours": {
-      "from": 6,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -43,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "4 Main Street",
-    "price": 4.3,
-    "openingHours": {
-      "from": 8,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -36,
-      "lon": 177
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "67 Street Avenue",
-    "price": 7,
-    "openingHours": {
       "from": 10,
-      "to": 21
+      "to": 18
     },
     "geocode": {
       "lat": -35,
-      "lon": 176
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "45 The best place",
-    "price": 5.5,
-    "openingHours": {
-      "from": 6,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -47,
-      "lon": 172
+      "lon": 175
     },
     "type": "Truck Stop",
     "services": {
       "trailerHire": false,
-      "carWash": false,
+      "carWash": true,
       "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "16 This place is amazing",
-    "price": 6.5,
-    "openingHours": {
-      "from": 6,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 172
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
       "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
       "LPGbottleSwap": true
     }
   },
   {
-    "name": "Gas Station",
-    "address": "16 This place is amazing",
-    "price": 6.5,
-    "openingHours": {
-      "from": 7,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 176
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "37 The best place",
+    "name": "Z Energy Station",
+    "address": "89 Street Avenue",
     "price": 7,
     "openingHours": {
       "from": 10,
       "to": 20
     },
     "geocode": {
-      "lat": -37,
+      "lat": -35,
+      "lon": 175
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "3 Main Street",
+    "price": 5.99,
+    "openingHours": {
+      "from": 7,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -39,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "14 This place is amazing",
+    "price": 7.5,
+    "openingHours": {
+      "from": 6,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 173
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "12 Street Avenue",
+    "price": 5.5,
+    "openingHours": {
+      "from": 9,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -35,
       "lon": 178
     },
     "type": "Service Station",
     "services": {
       "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "2 Main Street",
-    "price": 6.5,
-    "openingHours": {
-      "from": 8,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 175
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "4 Main Street",
-    "price": 6.2,
-    "openingHours": {
-      "from": 8,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -39,
-      "lon": 173
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "1 Main Street",
-    "price": 4.5,
-    "openingHours": {
-      "from": 10,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "23 Street Avenue",
-    "price": 4.8,
-    "openingHours": {
-      "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 173
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "4 Main Street",
-    "price": 7,
-    "openingHours": {
-      "from": 7,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 172
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "12 This place is amazing",
-    "price": 7,
-    "openingHours": {
-      "from": 9,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
       "carWash": false,
       "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "14 This place is amazing",
-    "price": 4.3,
-    "openingHours": {
-      "from": 8,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 176
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "14 This place is amazing",
-    "price": 7,
-    "openingHours": {
-      "from": 6,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "24 Wonderland",
-    "price": 7.5,
-    "openingHours": {
-      "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 177
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
       "foodnDrink": true,
       "toilet": true,
-      "ATM": true,
+      "ATM": false,
       "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "37 The best place",
-    "price": 4.3,
-    "openingHours": {
-      "from": 8,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 173
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "35 The best place",
-    "price": 4.3,
-    "openingHours": {
-      "from": 8,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -47,
-      "lon": 176
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "27 Wonderland",
-    "price": 5.5,
-    "openingHours": {
-      "from": 9,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "45 The best place",
-    "price": 4.5,
-    "openingHours": {
-      "from": 6,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 176
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "67 Street Avenue",
-    "price": 7,
-    "openingHours": {
-      "from": 10,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 171
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "25 Wonderland",
-    "price": 7.5,
-    "openingHours": {
-      "from": 10,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 171
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "24 Wonderland",
-    "price": 6.2,
-    "openingHours": {
-      "from": 10,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 177
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "16 This place is amazing",
-    "price": 4.5,
-    "openingHours": {
-      "from": 8,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -34,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "26 Wonderland",
-    "price": 4.5,
-    "openingHours": {
-      "from": 7,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -40,
-      "lon": 176
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "2 Main Street",
-    "price": 5.99,
-    "openingHours": {
-      "from": 8,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -38,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy",
     "address": "15 This place is amazing",
-    "price": 7,
+    "price": 6.2,
     "openingHours": {
-      "from": 8,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -42,
-      "lon": 174
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "25 Wonderland",
-    "price": 4.8,
-    "openingHours": {
-      "from": 8,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 175
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "1 Main Street",
-    "price": 5.99,
-    "openingHours": {
-      "from": 7,
+      "from": 6,
       "to": 18
     },
     "geocode": {
-      "lat": -43,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "27 Wonderland",
-    "price": 4.3,
-    "openingHours": {
-      "from": 6,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -40,
+      "lat": -37,
       "lon": 174
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "4 Main Street",
-    "price": 5.5,
-    "openingHours": {
-      "from": 10,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 171
     },
     "type": "Truck Stop",
     "services": {
@@ -1602,96 +570,120 @@
       "tirePressure": false,
       "foodnDrink": false,
       "toilet": false,
-      "ATM": true,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "67 Street Avenue",
-    "price": 5.99,
-    "openingHours": {
-      "from": 9,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -38,
-      "lon": 178
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": true,
-      "EVcharging": true,
+      "ATM": false,
+      "EVcharging": false,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Service Station",
-    "address": "45 Street Avenue",
-    "price": 4.8,
+    "address": "12 Street Avenue",
+    "price": 4.3,
     "openingHours": {
-      "from": 8,
-      "to": 20
+      "from": 10,
+      "to": 19
     },
     "geocode": {
-      "lat": -36,
-      "lon": 178
+      "lat": -38,
+      "lon": 177
     },
-    "type": "Truck Stop",
+    "type": "Service Station",
     "services": {
       "trailerHire": false,
-      "carWash": false,
+      "carWash": true,
       "tirePressure": true,
       "foodnDrink": true,
-      "toilet": true,
+      "toilet": false,
       "ATM": true,
       "EVcharging": false,
       "LPGbottleSwap": false
     }
   },
   {
-    "name": "Z Energy Station",
-    "address": "5 Main Street",
-    "price": 4.8,
+    "name": "Z Energy",
+    "address": "34 The best place",
+    "price": 5.5,
     "openingHours": {
-      "from": 10,
-      "to": 20
+      "from": 6,
+      "to": 18
     },
     "geocode": {
-      "lat": -35,
-      "lon": 178
+      "lat": -42,
+      "lon": 175
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "24 Wonderland",
+    "price": 5.5,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -41,
+      "lon": 171
     },
     "type": "Service Station",
     "services": {
-      "trailerHire": true,
-      "carWash": false,
+      "trailerHire": false,
+      "carWash": true,
       "tirePressure": false,
       "foodnDrink": true,
-      "toilet": true,
+      "toilet": false,
       "ATM": false,
-      "EVcharging": true,
+      "EVcharging": false,
       "LPGbottleSwap": false
     }
   },
   {
-    "name": "Gas Station",
-    "address": "37 The best place",
+    "name": "Z Energy Services",
+    "address": "35 The best place",
+    "price": 5.5,
+    "openingHours": {
+      "from": 6,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "45 The best place",
     "price": 6.5,
     "openingHours": {
       "from": 8,
       "to": 19
     },
     "geocode": {
-      "lat": -36,
+      "lat": -35,
       "lon": 173
     },
-    "type": "Service Station",
+    "type": "Truck Stop",
     "services": {
       "trailerHire": false,
       "carWash": true,
@@ -1704,15 +696,39 @@
     }
   },
   {
-    "name": "Z Energy Station",
-    "address": "12 Street Avenue",
+    "name": "Z Energy",
+    "address": "15 This place is amazing",
     "price": 5.5,
     "openingHours": {
-      "from": 10,
-      "to": 22
+      "from": 6,
+      "to": 18
     },
     "geocode": {
-      "lat": -38,
+      "lat": -36,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "67 Street Avenue",
+    "price": 7,
+    "openingHours": {
+      "from": 7,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -35,
       "lon": 177
     },
     "type": "Truck Stop",
@@ -1722,17 +738,89 @@
       "tirePressure": true,
       "foodnDrink": true,
       "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "38 The best place",
+    "price": 4.3,
+    "openingHours": {
+      "from": 7,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 175
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
       "ATM": true,
-      "EVcharging": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "38 The best place",
+    "price": 4.8,
+    "openingHours": {
+      "from": 8,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 175
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
       "LPGbottleSwap": true
     }
   },
   {
     "name": "Z Energy Services",
-    "address": "26 Wonderland",
-    "price": 5.5,
+    "address": "14 This place is amazing",
+    "price": 4.8,
     "openingHours": {
-      "from": 8,
+      "from": 9,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "23 Street Avenue",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
       "to": 18
     },
     "geocode": {
@@ -1741,153 +829,81 @@
     },
     "type": "Truck Stop",
     "services": {
-      "trailerHire": true,
+      "trailerHire": false,
       "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
       "ATM": false,
-      "EVcharging": true,
+      "EVcharging": false,
       "LPGbottleSwap": false
     }
   },
   {
-    "name": "Gas Station",
-    "address": "2 Main Street",
-    "price": 6.5,
-    "openingHours": {
-      "from": 10,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -43,
-      "lon": 173
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "3 Main Street",
-    "price": 4.3,
-    "openingHours": {
-      "from": 10,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -42,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "35 The best place",
-    "price": 4.3,
-    "openingHours": {
-      "from": 6,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 174
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
     "name": "Z Energy Station",
-    "address": "2 Main Street",
-    "price": 6.5,
+    "address": "36 The best place",
+    "price": 5.5,
     "openingHours": {
-      "from": 6,
-      "to": 22
+      "from": 7,
+      "to": 20
     },
     "geocode": {
       "lat": -46,
-      "lon": 178
+      "lon": 177
     },
-    "type": "Truck Stop",
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "89 Street Avenue",
+    "price": 5.99,
+    "openingHours": {
+      "from": 10,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 172
+    },
+    "type": "Service Station",
     "services": {
       "trailerHire": false,
       "carWash": true,
-      "tirePressure": true,
+      "tirePressure": false,
       "foodnDrink": true,
-      "toilet": true,
+      "toilet": false,
       "ATM": true,
       "EVcharging": false,
       "LPGbottleSwap": true
     }
   },
   {
-    "name": "Z Energy Services",
-    "address": "35 The best place",
-    "price": 4.5,
+    "name": "Z Energy Station",
+    "address": "25 Wonderland",
+    "price": 4.3,
     "openingHours": {
       "from": 10,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -35,
-      "lon": 178
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "12 Street Avenue",
-    "price": 5.5,
-    "openingHours": {
-      "from": 6,
       "to": 21
     },
     "geocode": {
       "lat": -45,
       "lon": 174
     },
-    "type": "Service Station",
+    "type": "Truck Stop",
     "services": {
-      "trailerHire": true,
+      "trailerHire": false,
       "carWash": true,
-      "tirePressure": false,
+      "tirePressure": true,
       "foodnDrink": false,
       "toilet": true,
       "ATM": true,
@@ -1896,15 +912,15 @@
     }
   },
   {
-    "name": "Z Energy",
-    "address": "1 Main Street",
-    "price": 4.8,
+    "name": "Z Energy Services",
+    "address": "5 Main Street",
+    "price": 4.3,
     "openingHours": {
-      "from": 9,
-      "to": 18
+      "from": 7,
+      "to": 20
     },
     "geocode": {
-      "lat": -42,
+      "lat": -41,
       "lon": 175
     },
     "type": "Service Station",
@@ -1912,7 +928,7 @@
       "trailerHire": false,
       "carWash": true,
       "tirePressure": false,
-      "foodnDrink": true,
+      "foodnDrink": false,
       "toilet": false,
       "ATM": false,
       "EVcharging": true,
@@ -1920,188 +936,20 @@
     }
   },
   {
-    "name": "Z Energy Services",
-    "address": "36 The best place",
-    "price": 5.99,
-    "openingHours": {
-      "from": 10,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": true,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "37 The best place",
-    "price": 6.5,
-    "openingHours": {
-      "from": 6,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -43,
-      "lon": 177
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "26 Wonderland",
-    "price": 4.3,
-    "openingHours": {
-      "from": 8,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -46,
-      "lon": 172
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "27 Wonderland",
-    "price": 4.5,
-    "openingHours": {
-      "from": 7,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 177
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
     "name": "Service Station",
-    "address": "36 The best place",
-    "price": 5.99,
-    "openingHours": {
-      "from": 9,
-      "to": 22
-    },
-    "geocode": {
-      "lat": -41,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Station",
-    "address": "25 Wonderland",
-    "price": 7,
-    "openingHours": {
-      "from": 10,
-      "to": 21
-    },
-    "geocode": {
-      "lat": -39,
-      "lon": 178
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "27 Wonderland",
+    "address": "15 This place is amazing",
     "price": 5.5,
     "openingHours": {
-      "from": 7,
-      "to": 18
+      "from": 9,
+      "to": 20
     },
     "geocode": {
       "lat": -44,
       "lon": 173
     },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "67 Street Avenue",
-    "price": 7,
-    "openingHours": {
-      "from": 6,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -47,
-      "lon": 178
-    },
     "type": "Truck Stop",
     "services": {
-      "trailerHire": false,
+      "trailerHire": true,
       "carWash": true,
       "tirePressure": true,
       "foodnDrink": false,
@@ -2112,40 +960,136 @@
     }
   },
   {
-    "name": "Z Energy",
-    "address": "14 This place is amazing",
+    "name": "Service Station",
+    "address": "15 This place is amazing",
     "price": 5.5,
     "openingHours": {
-      "from": 10,
-      "to": 21
+      "from": 8,
+      "to": 22
     },
     "geocode": {
       "lat": -46,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "15 This place is amazing",
+    "price": 4.5,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -34,
+      "lon": 172
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "23 Wonderland",
+    "price": 7,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -42,
       "lon": 176
     },
     "type": "Service Station",
     "services": {
       "trailerHire": true,
       "carWash": false,
-      "tirePressure": false,
+      "tirePressure": true,
       "foodnDrink": true,
-      "toilet": false,
+      "toilet": true,
       "ATM": true,
       "EVcharging": true,
       "LPGbottleSwap": false
     }
   },
   {
-    "name": "Gas Station",
-    "address": "13 This place is amazing",
-    "price": 4.5,
+    "name": "Service Station",
+    "address": "67 Street Avenue",
+    "price": 5.99,
     "openingHours": {
       "from": 7,
-      "to": 19
+      "to": 20
     },
     "geocode": {
-      "lat": -44,
-      "lon": 172
+      "lat": -34,
+      "lon": 174
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "12 Street Avenue",
+    "price": 5.5,
+    "openingHours": {
+      "from": 7,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -39,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "23 Wonderland",
+    "price": 7,
+    "openingHours": {
+      "from": 8,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -42,
+      "lon": 171
     },
     "type": "Truck Stop",
     "services": {
@@ -2153,102 +1097,6 @@
       "carWash": false,
       "tirePressure": false,
       "foodnDrink": true,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": true,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Z Energy Services",
-    "address": "37 The best place",
-    "price": 6.5,
-    "openingHours": {
-      "from": 7,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -45,
-      "lon": 175
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": false,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": true
-    }
-  },
-  {
-    "name": "Service Station",
-    "address": "5 Main Street",
-    "price": 5.5,
-    "openingHours": {
-      "from": 10,
-      "to": 18
-    },
-    "geocode": {
-      "lat": -45,
-      "lon": 171
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
-      "toilet": true,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "3 Main Street",
-    "price": 6.5,
-    "openingHours": {
-      "from": 6,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 172
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Z Energy",
-    "address": "45 The best place",
-    "price": 4.5,
-    "openingHours": {
-      "from": 8,
-      "to": 20
-    },
-    "geocode": {
-      "lat": -37,
-      "lon": 171
-    },
-    "type": "Truck Stop",
-    "services": {
-      "trailerHire": false,
-      "carWash": true,
-      "tirePressure": false,
-      "foodnDrink": false,
       "toilet": false,
       "ATM": true,
       "EVcharging": false,
@@ -2257,44 +1105,68 @@
   },
   {
     "name": "Z Energy Station",
-    "address": "12 Street Avenue",
+    "address": "25 Wonderland",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -34,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "12 This place is amazing",
+    "price": 7,
+    "openingHours": {
+      "from": 7,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 175
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "5 Main Street",
     "price": 7.5,
     "openingHours": {
       "from": 10,
       "to": 20
     },
     "geocode": {
-      "lat": -47,
+      "lat": -44,
       "lon": 178
     },
     "type": "Service Station",
     "services": {
       "trailerHire": true,
       "carWash": false,
-      "tirePressure": true,
-      "foodnDrink": true,
-      "toilet": false,
-      "ATM": false,
-      "EVcharging": false,
-      "LPGbottleSwap": false
-    }
-  },
-  {
-    "name": "Gas Station",
-    "address": "13 This place is amazing",
-    "price": 4.8,
-    "openingHours": {
-      "from": 7,
-      "to": 19
-    },
-    "geocode": {
-      "lat": -44,
-      "lon": 175
-    },
-    "type": "Service Station",
-    "services": {
-      "trailerHire": true,
-      "carWash": true,
       "tirePressure": true,
       "foodnDrink": true,
       "toilet": true,
@@ -2304,22 +1176,94 @@
     }
   },
   {
-    "name": "Gas Station",
-    "address": "5 Main Street",
+    "name": "Z Energy",
+    "address": "36 The best place",
     "price": 5.5,
     "openingHours": {
-      "from": 10,
-      "to": 21
+      "from": 9,
+      "to": 18
     },
     "geocode": {
-      "lat": -34,
+      "lat": -43,
+      "lon": 174
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "16 This place is amazing",
+    "price": 6.2,
+    "openingHours": {
+      "from": 8,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -35,
       "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "67 Street Avenue",
+    "price": 4.3,
+    "openingHours": {
+      "from": 9,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -42,
+      "lon": 174
     },
     "type": "Service Station",
     "services": {
       "trailerHire": true,
-      "carWash": true,
+      "carWash": false,
       "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "27 Wonderland",
+    "price": 7,
+    "openingHours": {
+      "from": 9,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
       "foodnDrink": true,
       "toilet": true,
       "ATM": true,
@@ -2329,22 +1273,238 @@
   },
   {
     "name": "Z Energy",
-    "address": "24 Wonderland",
-    "price": 5.99,
+    "address": "3 Main Street",
+    "price": 6.2,
+    "openingHours": {
+      "from": 7,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -41,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "36 The best place",
+    "price": 6.2,
+    "openingHours": {
+      "from": 6,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -39,
+      "lon": 174
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "25 Wonderland",
+    "price": 7.5,
     "openingHours": {
       "from": 10,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 178
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "35 The best place",
+    "price": 5.5,
+    "openingHours": {
+      "from": 10,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -42,
+      "lon": 177
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "36 The best place",
+    "price": 7,
+    "openingHours": {
+      "from": 6,
       "to": 21
     },
     "geocode": {
-      "lat": -44,
-      "lon": 176
+      "lat": -40,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "23 Wonderland",
+    "price": 4.3,
+    "openingHours": {
+      "from": 6,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "45 The best place",
+    "price": 6.5,
+    "openingHours": {
+      "from": 7,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 178
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "46 The best place",
+    "price": 7,
+    "openingHours": {
+      "from": 7,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 174
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "37 The best place",
+    "price": 5.5,
+    "openingHours": {
+      "from": 8,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 177
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "23 Street Avenue",
+    "price": 4.5,
+    "openingHours": {
+      "from": 6,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -47,
+      "lon": 173
     },
     "type": "Truck Stop",
     "services": {
       "trailerHire": false,
       "carWash": true,
-      "tirePressure": true,
-      "foodnDrink": false,
+      "tirePressure": false,
+      "foodnDrink": true,
       "toilet": false,
       "ATM": true,
       "EVcharging": true,
@@ -2352,21 +1512,69 @@
     }
   },
   {
-    "name": "Service Station",
-    "address": "34 The best place",
-    "price": 5.5,
+    "name": "Z Energy",
+    "address": "23 Street Avenue",
+    "price": 7,
     "openingHours": {
-      "from": 7,
-      "to": 19
+      "from": 9,
+      "to": 20
     },
     "geocode": {
-      "lat": -39,
+      "lat": -36,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "67 Street Avenue",
+    "price": 5.5,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -36,
       "lon": 173
     },
     "type": "Service Station",
     "services": {
-      "trailerHire": true,
+      "trailerHire": false,
       "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "67 Street Avenue",
+    "price": 7,
+    "openingHours": {
+      "from": 10,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 171
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
       "tirePressure": true,
       "foodnDrink": true,
       "toilet": false,
@@ -2377,10 +1585,322 @@
   },
   {
     "name": "Z Energy Services",
-    "address": "24 Wonderland",
+    "address": "16 This place is amazing",
+    "price": 4.5,
+    "openingHours": {
+      "from": 7,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -34,
+      "lon": 175
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "36 The best place",
+    "price": 7.5,
+    "openingHours": {
+      "from": 8,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 177
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "12 This place is amazing",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 172
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "35 The best place",
+    "price": 4.8,
+    "openingHours": {
+      "from": 10,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -41,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "23 Street Avenue",
+    "price": 6.5,
+    "openingHours": {
+      "from": 9,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 178
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "37 The best place",
+    "price": 4.5,
+    "openingHours": {
+      "from": 9,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -46,
+      "lon": 172
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "23 Wonderland",
+    "price": 4.3,
+    "openingHours": {
+      "from": 9,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -35,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "38 The best place",
     "price": 6.2,
     "openingHours": {
       "from": 8,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -46,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "5 Main Street",
+    "price": 5.5,
+    "openingHours": {
+      "from": 10,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 173
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "46 The best place",
+    "price": 5.99,
+    "openingHours": {
+      "from": 6,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "1 Main Street",
+    "price": 5.99,
+    "openingHours": {
+      "from": 7,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "37 The best place",
+    "price": 7.5,
+    "openingHours": {
+      "from": 6,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 171
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "14 This place is amazing",
+    "price": 4.3,
+    "openingHours": {
+      "from": 7,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "37 The best place",
+    "price": 5.5,
+    "openingHours": {
+      "from": 6,
       "to": 21
     },
     "geocode": {
@@ -2391,10 +1911,490 @@
     "services": {
       "trailerHire": true,
       "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "45 Street Avenue",
+    "price": 6.2,
+    "openingHours": {
+      "from": 6,
+      "to": 19
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
       "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "14 This place is amazing",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -40,
+      "lon": 172
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "35 The best place",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -45,
+      "lon": 174
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "5 Main Street",
+    "price": 6.5,
+    "openingHours": {
+      "from": 7,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -47,
+      "lon": 173
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "14 This place is amazing",
+    "price": 4.5,
+    "openingHours": {
+      "from": 10,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -38,
+      "lon": 174
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "25 Wonderland",
+    "price": 5.99,
+    "openingHours": {
+      "from": 10,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "5 Main Street",
+    "price": 6.5,
+    "openingHours": {
+      "from": 8,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 173
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
       "foodnDrink": true,
       "toilet": true,
       "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "12 This place is amazing",
+    "price": 7.5,
+    "openingHours": {
+      "from": 6,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "1 Main Street",
+    "price": 5.5,
+    "openingHours": {
+      "from": 7,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 178
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "35 The best place",
+    "price": 5.5,
+    "openingHours": {
+      "from": 10,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -44,
+      "lon": 178
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "35 The best place",
+    "price": 6.5,
+    "openingHours": {
+      "from": 9,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -35,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy",
+    "address": "67 Street Avenue",
+    "price": 7,
+    "openingHours": {
+      "from": 9,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -47,
+      "lon": 176
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "24 Wonderland",
+    "price": 7,
+    "openingHours": {
+      "from": 8,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -43,
+      "lon": 177
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "38 The best place",
+    "price": 6.2,
+    "openingHours": {
+      "from": 10,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -37,
+      "lon": 177
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": true,
+      "ATM": false,
+      "EVcharging": true,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Services",
+    "address": "89 Street Avenue",
+    "price": 7.5,
+    "openingHours": {
+      "from": 7,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -41,
+      "lon": 171
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "35 The best place",
+    "price": 4.3,
+    "openingHours": {
+      "from": 9,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -47,
+      "lon": 174
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": true,
+      "toilet": false,
+      "ATM": true,
+      "EVcharging": true,
+      "LPGbottleSwap": false
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "38 The best place",
+    "price": 6.5,
+    "openingHours": {
+      "from": 8,
+      "to": 20
+    },
+    "geocode": {
+      "lat": -36,
+      "lon": 172
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": false,
+      "carWash": false,
+      "tirePressure": false,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Z Energy Station",
+    "address": "27 Wonderland",
+    "price": 6.5,
+    "openingHours": {
+      "from": 7,
+      "to": 18
+    },
+    "geocode": {
+      "lat": -35,
+      "lon": 176
+    },
+    "type": "Truck Stop",
+    "services": {
+      "trailerHire": true,
+      "carWash": true,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": true,
+      "ATM": true,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Gas Station",
+    "address": "26 Wonderland",
+    "price": 7,
+    "openingHours": {
+      "from": 10,
+      "to": 21
+    },
+    "geocode": {
+      "lat": -34,
+      "lon": 176
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
+      "EVcharging": false,
+      "LPGbottleSwap": true
+    }
+  },
+  {
+    "name": "Service Station",
+    "address": "24 Wonderland",
+    "price": 6.2,
+    "openingHours": {
+      "from": 9,
+      "to": 22
+    },
+    "geocode": {
+      "lat": -45,
+      "lon": 176
+    },
+    "type": "Service Station",
+    "services": {
+      "trailerHire": true,
+      "carWash": false,
+      "tirePressure": true,
+      "foodnDrink": false,
+      "toilet": false,
+      "ATM": false,
       "EVcharging": true,
       "LPGbottleSwap": false
     }

@@ -1,4 +1,4 @@
-import fs from 'fs';
+const fs = require('fs');
 // Gas Stations locations Generator
 // Chat GPT refused to generate my Data, so I had to generate it manually.
 

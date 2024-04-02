@@ -1,7 +1,6 @@
-import PromptSync from 'prompt-sync';
-import {MongoClient} from 'mongodb';
+const prompt = require('prompt-sync')();
+const {MongoClient} = require('mongodb');
 
-const prompt = PromptSync();
 const zenergyDB = 'zenergy-db';
 
 const USER = prompt(`Insert the user name for the database: `);
