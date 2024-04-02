@@ -80,7 +80,7 @@ const LocationMap = () => {
           </div>
           {selectedDiv === 1 && <div className="flex flex-col ">
 
-            <div className="flex justify-center pt-4">
+            <div className="flex justify-center py-4">
               <div className="flex w-full justify-center py-4 font-medium">
                 <h3>Station type</h3>
               </div>
@@ -89,7 +89,7 @@ const LocationMap = () => {
               </div>
             </div>
 
-            <div className="flex flex-col w-[14rem] mx-auto gap-3 pt-1">
+            <div className="flex flex-col w-[14rem] mx-auto gap-3 ">
 
             <div className='flex '><button className="relative px-8 py-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-gray-200 transition-all active:scale-95"><RiTruckFill className="absolute text-[1.4rem] top-2 left-5"/>Truck Stop</button>
           </div>
