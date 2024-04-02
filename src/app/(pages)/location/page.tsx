@@ -1,6 +1,10 @@
+import LocationMap from "@/app/_components/location-map"
+
 const Location = () => {
   return (
-    <div>Location</div>
+    <>
+    <LocationMap/>
+    </>
   )
 }
 export default Location
