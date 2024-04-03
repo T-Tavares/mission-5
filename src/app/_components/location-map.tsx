@@ -6,10 +6,12 @@ import {FaChevronRight} from 'react-icons/fa6';
 import {IoMdSearch} from 'react-icons/io';
 import {MdMyLocation} from 'react-icons/md';
 import {RiTruckFill} from 'react-icons/ri';
+
 import {services} from '../_lib/data';
 
 import data from '../../../init/locations.json';
-import LocationCard from './_locationComponents/locationCard';
+
+import LocationCard from './_locationComponents/Card';
 import initializeMarkers from './_locationComponents/initializeMarkers';
 
 const LocationMap = () => {

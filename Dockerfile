@@ -18,4 +18,9 @@ RUN npm run build
 COPY . /app
 # Expose the port and start the app
 EXPOSE 3000
+
+# Has to be the same as the web service (NextJS 3000)
+ENV PORT 3000
+ENV HOSTNAME '0.0.0.0'
+
 CMD ["npm", "run", "start"]
