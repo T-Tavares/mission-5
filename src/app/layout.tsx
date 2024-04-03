@@ -22,8 +22,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${roboto.variable}`}>
-                <div className="flex flex-col w-screen min-h-screen bg roboto ">
+            <body className={roboto.variable}>
+                <div className="flex flex-col h-screen w-full bg roboto ">
                     <Header />
                     <div className="flex-grow">{children}</div>
                     <Footer />

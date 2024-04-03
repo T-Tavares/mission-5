@@ -1,69 +1,158 @@
 'use client';
-import {Loader} from '@googlemaps/js-api-loader';
+
 import React, {useEffect, useState} from 'react';
+import {services} from '../_lib/data';
+
+// ICONS IMPORTS
 import {BsFuelPumpFill} from 'react-icons/bs';
 import {FaChevronRight} from 'react-icons/fa6';
 import {IoMdSearch} from 'react-icons/io';
 import {MdMyLocation} from 'react-icons/md';
 import {RiTruckFill} from 'react-icons/ri';
-import {services} from '../_lib/data';
 
+// LOCAL DB TO SIMULATE API
 import data from '../../../init/locations.json';
-import LocationCard from './_locationComponents/Card';
-import initializeMarkers from './_locationComponents/initializeMarkers';
+
+// GOOGLE MAPS AND MAPS CONTROLLERS IMPORTS
+import {Loader} from '@googlemaps/js-api-loader';
+import LocationCard from './card';
+import initializeMarkers from './_mapsControllers/initializeMarkers';
+import initializeUserMarker from './_mapsControllers/initializeUserMarker';
+import getUserGeocode from './_mapsControllers/getUserGeocode';
+import getCloserPaths, {getPathAtoB} from './_mapsControllers/getPathAtoB';
+import updateLocationsDB from './_mapsControllers/updateLocationsDB';
 
 const LocationMap = () => {
     const [selectedDiv, setSelectedDiv] = useState(2);
     const mapRef = React.useRef<HTMLDivElement>(null);
 
-    const [locationsList, setLocationsList] = useState<any[]>(data);
+    const hasLocationBeenSorted = React.useRef(false);
+
+    const [userGeocode, setUserGeocode] = useState<any>({});
+
+    const [locationsRawDB, setLocationsRawDB] = useState<any[]>();
+    const [locationsUpdatedDB, setLocationsUpdatedDB] = useState<any[]>([]);
+    const [locationsDB, setLocationsDB] = useState<any[]>([]);
+
     const [locationsElements, setLocationsElements] = useState<any[]>([]);
 
-    // ----------- LOCATIONS LIST AND ELEMENTS useEffect() ------------ //
+    // ---------------------------------------------------------------- //
+    // ------------------------- useEffects() ------------------------- //
+    // ---------------------------------------------------------------- //
 
-    // useEffect(() => {
-    //     fetch('http://0.0.0.0:3000/api/locations')
-    //         .then(res => res.json())
-    //         .then(locations => setLocationsList(locations));
-    // }, []);
+    // ----------------------- GET USER GEOCODE ----------------------- //
 
     useEffect(() => {
-        const locationEls = locationsList
-            ?.map((location: any, index: number) => <LocationCard key={index} location={location} />)
-            .slice(0, 10);
+        async function getAndSetUserGeocode() {
+            const geocode = await getUserGeocode();
+            setUserGeocode(geocode);
+            hasLocationBeenSorted.current = true;
+        }
+        getAndSetUserGeocode();
+    }, []);
+
+    // ------------------ FETCHING LOCATIONS FROM DB ------------------ //
+
+    useEffect(() => {
+        fetch('http://0.0.0.0:3000/api/get-locations')
+            .then(res => res.json())
+            .then(locations => setLocationsRawDB(locations));
+    }, []);
+
+    // -------------- CALCULATING DISTANCE AND DURATION  -------------- //
+    // ---------------- AND CREATING LOCAL UPDATED DB ----------------- //
+
+    // Initial Plan was to sort it here.. clean and easy... but Google API had other plans...🥲
+
+    // useEffect(() => {
+    //     updateLocationsDB(locationsRawDB, userGeocode).then(updatedDB => setLocationsUpdatedDB(updatedDB));
+    // }, [locationsRawDB]);
+
+    // ------------- FILTER OR SORT UPDATED LOCATIONS DB -------------- //
+
+    useEffect(() => {
+        const sortedDB = locationsUpdatedDB.sort((a, b) => a.distance.value - b.distance.value);
+        setLocationsDB(sortedDB);
+    }, [locationsUpdatedDB]);
+
+    // ------------------- BUILDING LOCATION CARDS -------------------- //
+
+    useEffect(() => {
+        const locationEls = locationsDB
+            .map((location: any, index: number) => <LocationCard key={index} location={location} />)
+            .slice(0, 10); // TODO REMOVE LATER
 
         setLocationsElements(locationEls);
-    }, [locationsList]);
+    }, [locationsDB]);
 
-    // ----------------- GOOGLE MAPS API useEffect() ------------------ //
+    // ---------------------------------------------------------------- //
+    // ----------------------- GOOGLE MAPS API ------------------------ //
+    // ---------------------------------------------------------------- //
+    // ---------- GOOGLE MAPS INITIATION, RENDER AND UPDATES ---------- //
+    // ---------------------------------------------------------------- //
 
     useEffect(() => {
         const initMap = async () => {
+            /* 
+                Because this function interacts with most of the states sets on this page
+                I choose to keep it here for better maintenance, readability and to avoid prop drilling.
+                It also rerender according to user interactions to the application.
+
+                So please, bare with this wordy code.
+            */
+
+            // REQUEST GOOGLE MAPS LIBRARY AND INIT MAP
             const loader = new Loader({
-                apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string, // OR use ! to force it instead of as string
+                apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY!,
                 version: 'weekly',
             });
 
             const {Map} = await loader.importLibrary('maps');
-            const position = {
-                lat: -43.3744881,
-                lng: 172.4662705,
-            };
+            const position: any = userGeocode || (await getUserGeocode()); // TRY TO GET USER GEOCODE IF NOT PROVIDED
 
-            //map options
+            // MAP OPTIONS
             const mapOptions: google.maps.MapOptions = {
                 center: position,
-                zoom: 8,
+                zoom: 12,
                 mapId: 'MY_NEXTJS_MAPID',
             };
-            // setup map
+
+            // set mapRef to the BUILT MAP
             const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
 
-            initializeMarkers(locationsList, map);
-        };
+            /* 
+                Google Distance Matrix API demands to work with a map instance. 
+                My guess is so people don't use google API to feed other companies services.
 
-        initMap();
-    }, []);
+                That said. The updatedLocationsDB relies on this API to work. So I had to keep 
+                it here. Because of that any other function that falls on the updatedLocationsDB
+                to work, have to be called here. 
+                
+                Not Ideal, but that's the way it works.
+            */
+
+            updateLocationsDB(locationsRawDB, userGeocode).then(updatedDB => {
+                // getCloserPaths(map, userGeocode, locationsDB);
+                getCloserPaths(map, userGeocode, updatedDB);
+                setLocationsUpdatedDB(updatedDB);
+            });
+
+            // ONLY INITIALIZE USER MARKERS AND PATHS IF USER GEOCODE IS AVAILABLE
+            // (Safe Clause to prevent unecessary requests)
+
+            initializeMarkers(map, locationsRawDB || []);
+
+            if (userGeocode) {
+                initializeUserMarker(map, userGeocode);
+                // getPathAtoB(map, userGeocode);
+                // getPathAtoB(map, userGeocode, {lat: -36.8185, lng: 174.7671});
+            }
+        };
+        if (hasLocationBeenSorted.current) {
+            initMap();
+            hasLocationBeenSorted.current = true;
+        }
+    }, [userGeocode, hasLocationBeenSorted, locationsRawDB]);
 
     // ---------------------------------------------------------------- //
     // -------------------------- COMPONENT --------------------------- //
@@ -176,7 +265,7 @@ const LocationMap = () => {
                     )}
                     {/* {selectedDiv === 2 && locationsElements} */}
                     {selectedDiv === 2 && (
-                        <div className="flex flex-col justify-center items-center overflow-y-scroll">
+                        <div className="flex flex-col items-center overflow-y-scroll">
                             <h3 className="font-medium text-lg self-start mt-6 mb-4 ml-11">Nearest</h3>
                             {locationsElements}
                         </div>
