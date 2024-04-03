@@ -9,7 +9,7 @@ import {RiTruckFill} from 'react-icons/ri';
 import {services} from '../_lib/data';
 
 import data from '../../../init/locations.json';
-import LocationCard from './_locationComponents/locationCard';
+import LocationCard from './_locationComponents/Card';
 import initializeMarkers from './_locationComponents/initializeMarkers';
 
 const LocationMap = () => {

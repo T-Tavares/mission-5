@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${roboto.variable} overflow-x-hidden`}>
+            <body className={`${roboto.variable}`}>
                 <div className="flex flex-col w-screen min-h-screen bg roboto ">
                     <Header />
                     <div className="flex-grow">{children}</div>
