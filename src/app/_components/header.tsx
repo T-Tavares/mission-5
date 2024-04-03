@@ -1,5 +1,6 @@
 "use client"
 import { Fragment, useState } from 'react'
+import Link from 'next/link';
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
@@ -48,7 +49,8 @@ const Header = () => {
         
         
         <div className="hidden lg:flex lg:flex-1  lg:justify-end  px-2 gap-8 ">
-          <div className='flex pl-6'><button className="px-6 py-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">Find a Station</button>
+          <div className='flex pl-6'>
+            <Link href="/location"><button className="px-6 py-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">Find a Station</button></Link>
           </div>
           <button className="text-primary font-medium">Search</button>
           <div className="-ml-6 ">
@@ -84,7 +86,8 @@ const Header = () => {
               </div>
               <div className='flex justify-center'>
               <div className=" w-[12rem]  py-6">
-              <button className="px-6 p-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">Find a Station</button>
+              <Link href="/location">
+              <button className="px-6 p-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">Find a Station</button></Link>
               </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import { BsFuelPumpFill } from "react-icons/bs"
 import { FaTabletAlt } from "react-icons/fa"
 import { services } from "../_lib/data"
+import Link from "next/link"
 
 
 
@@ -14,7 +15,8 @@ const Hero = () => {
           <img src="hero.png" className=""/>
           <div className="flex flex-col top-[11rem] left-[5rem] absolute w-[25rem]">
             <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
-            <div className='flex w-[12rem] pt-8 ml-1'><button className="px-6 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button>
+            <div className='flex w-[12rem] pt-8 ml-1'>
+              <Link href="/location"><button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button></Link>
           </div>
           </div>
         </div>
@@ -27,7 +29,8 @@ const Hero = () => {
           <img src="hero-mobile.png" className="h-[20rem]  lg:h-[30rem]"/>
           <div className="flex flex-col top-[11rem] pl-2 sm:left-[5rem] absolute w-[25rem]">
             <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
-            <div className='flex w-[12rem] pt-8 ml-1'><button className="px-6 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button>
+            <div className='flex w-[12rem] pt-8 ml-1'>
+              <Link href="/location"><button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button></Link>
           </div>
           </div>
         </div>
