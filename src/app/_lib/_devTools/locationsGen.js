@@ -65,7 +65,7 @@ const generateLocation = () => {
         },
         geocode: {
             lat: geoLat(),
-            lon: geoLon(),
+            lng: geoLon(),
         },
         type: getRandom(types),
         services: {

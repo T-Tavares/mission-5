@@ -14,10 +14,10 @@ docker network rm zenergy-network
 
 # The next line will clear volumes => WARNING Data will be lost ( Comment / Uncomment as needed )
 # After the connections and volumes are sorted, keep it commented
+# docker volume rm zenergy-volume # delete later
 
 # Remove image
 docker rmi zenergy-web
 
 # Restart Docker container 
-# docker volume rm zenergy-volume # delete later
 docker compose up -d 

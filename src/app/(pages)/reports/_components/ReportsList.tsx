@@ -9,9 +9,8 @@ export default async function ReportsList() {
     const getReports = () => {
         fetch('http://0.0.0.0:3000/api/reports')
             .then(res => res.json())
-            .then(data => {
-                console.log(data.reports);
-                setReports(data.reports);
+            .then(reports => {
+                setReports(reports);
             });
     };
 
