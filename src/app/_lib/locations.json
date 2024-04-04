@@ -97,78 +97,6 @@
     },
     {
         "name": "Gas Station",
-        "address": "26 Wonderland",
-        "price": 6.5,
-        "openingHours": {
-            "from": 6,
-            "to": 22
-        },
-        "geocode": {
-            "lat": -36.80288,
-            "lng": 174
-        },
-        "type": "Service Station",
-        "services": {
-            "trailerHire": false,
-            "carWash": false,
-            "tirePressure": true,
-            "foodnDrink": false,
-            "toilet": false,
-            "ATM": true,
-            "EVcharging": true,
-            "LPGbottleSwap": true
-        }
-    },
-    {
-        "name": "Z Energy Station",
-        "address": "16 This place is amazing",
-        "price": 4.8,
-        "openingHours": {
-            "from": 7,
-            "to": 21
-        },
-        "geocode": {
-            "lat": -35,
-            "lng": 177
-        },
-        "type": "Service Station",
-        "services": {
-            "trailerHire": true,
-            "carWash": false,
-            "tirePressure": false,
-            "foodnDrink": false,
-            "toilet": false,
-            "ATM": true,
-            "EVcharging": true,
-            "LPGbottleSwap": false
-        }
-    },
-    {
-        "name": "Service Station",
-        "address": "12 This place is amazing",
-        "price": 6.5,
-        "openingHours": {
-            "from": 6,
-            "to": 22
-        },
-        "geocode": {
-            "lat": -47,
-            "lng": 174
-        },
-        "type": "Truck Stop",
-        "services": {
-            "trailerHire": false,
-            "carWash": true,
-            "tirePressure": false,
-            "foodnDrink": true,
-            "toilet": true,
-            "ATM": true,
-            "EVcharging": true,
-            "LPGbottleSwap": false
-        }
-    },
-    {
-        "name": "Gas Station",
         "address": "38 The best place",
         "price": 7,
         "openingHours": {
@@ -200,8 +128,8 @@
             "to": 22
         },
         "geocode": {
-            "lat": -45,
-            "lng": 175
+            "lat": -43.343791,
+            "lng": 172.18016
         },
         "type": "Truck Stop",
         "services": {
@@ -237,6 +165,66 @@
             "ATM": false,
             "EVcharging": true,
             "LPGbottleSwap": false
+        }
+    },
+    {
+        "name": "Z Energy Services",
+        "address": "35 The best place",
+        "price": 4.5,
+        "openingHours": {
+            "from": 10,
+            "to": 22
+        },
+        "geocode": {
+            "lat": -43.743191,
+            "lng": 172.37016
+        },
+        "type": "Truck Stop",
+        "services": {
+            "trailerHire": true,
+            "carWash": true,
+            "tirePressure": true,
+            "foodnDrink": false,
+            "toilet": false,
+            "ATM": false,
+            "EVcharging": true,
+            "LPGbottleSwap": false
+        }
+    },
+    {
+        "name": "Z Energy Station",
+        "address": "1 Main Street",
+        "price": 4.3,
+        "openingHours": {"from": 6, "to": 20},
+        "geocode": {"lat": -43.543591, "lng": 172.68016},
+        "type": "Truck Stop",
+        "services": {
+            "trailerHire": true,
+            "carWash": true,
+            "tirePressure": true,
+            "foodnDrink": false,
+            "toilet": false,
+            "ATM": false,
+            "EVcharging": true,
+            "LPGbottleSwap": false
+        }
+    },
+    {
+        "name": "Service Station",
+        "address": "23 Street Avenue",
+        "price": 6.5,
+        "openingHours": {"from": 10, "to": 22},
+        "geocode": {"lat": -43.518589, "lng": 172.542193},
+        "type": "Service Station",
+        "services": {
+            "trailerHire": false,
+            "carWash": true,
+            "tirePressure": true,
+            "foodnDrink": true,
+            "toilet": false,
+            "ATM": true,
+            "EVcharging": false,
+            "LPGbottleSwap": true
         }
     }
 ]

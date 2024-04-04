@@ -1,7 +1,21 @@
+// REFERENCE LINKS
+// https://developers.google.com/maps/documentation/javascript/reference/directions#DirectionsRendererOptions
+
 export const dynamic = 'force-dynamic';
 
 export async function getPathAtoB(map: any, userGeolocation: any, destinationGeocode?: any) {
-    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionRenderOptions = {
+        draggable: true,
+        infoWindow: new google.maps.InfoWindow(),
+        suppressMarkers: true,
+        polylineOptions: {
+            strokeColor: '#00C87A',
+            strokeWeight: 8,
+        },
+        preserveViewport: true,
+    };
+
+    const directionsRenderer = new google.maps.DirectionsRenderer(directionRenderOptions);
     const directionsService = new google.maps.DirectionsService();
 
     directionsRenderer.setMap(map);

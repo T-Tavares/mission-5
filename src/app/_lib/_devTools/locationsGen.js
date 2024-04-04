@@ -54,7 +54,7 @@ const bool = [true, false];
 
 // GENERATE SINGLE LOCATION
 
-const generateLocation = () => {
+const generateLocation = geocode => {
     return {
         name: getRandom(names),
         address: getRandom(address),
@@ -64,8 +64,8 @@ const generateLocation = () => {
             to: getRandom(tos),
         },
         geocode: {
-            lat: geoLat(),
-            lng: geoLon(),
+            lat: geocode[0] || geoLat(),
+            lng: geocode[1] || geoLon(),
         },
         type: getRandom(types),
         services: {
@@ -82,11 +82,26 @@ const generateLocation = () => {
 };
 
 // GENERATE A BUNCH OF LOCATIONS
-const locations = [];
-for (let i = 0; i < 100; i++) locations.push(generateLocation());
-const locationsJSON = JSON.stringify(locations, null, 2);
+// const locations = [];
+// for (let i = 0; i < 100; i++) locations.push(generateLocation());
+// const locationsJSON = JSON.stringify(locations, null, 2);
 
-fs.writeFile('locations.json', locationsJSON, 'utf8', err => {
-    if (err) return console.log(err);
-    return console.log('Locations Generated!');
-});
+// fs.writeFile('locations.json', locationsJSON, 'utf8', err => {
+//     if (err) return console.log(err);
+//     return console.log('Locations Generated!');
+// });
+
+//
+const geocodes = [
+    [-43.543591, 172.68016],
+    [-43.518589, 172.542193],
+    [-43.63537, 172.492065],
+    [-43.461772, 172.667847],
+    [-41.191163, 174.954088],
+    [38.658378, 176.093429],
+    [37.7752553, 175.31457],
+    [-44.999966, 168.709009],
+];
+
+const newLocations = geocodes.map(code => generateLocation(code));
+console.log(newLocations);

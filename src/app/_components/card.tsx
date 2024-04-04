@@ -41,7 +41,8 @@ export default function LocationCard({location}: any) {
         <div className="p-3 my-3 border-2 rounded-xl border-grey-400 w-3/4">
             <h3 className="font-bold text-lg ">{location.name}</h3>
             <p className="text-lg">{location.address}</p>
-            <p className="text-lg">distance</p>
+            <p className="text-lg">{location.duration.text}</p>
+            <p className="text-lg">{location.distance.text}</p>
             <p className="text-lg">{openingHours()}</p>
             {services()}
         </div>

@@ -1,40 +1,49 @@
 'use client';
 
+// ---------------------------------------------------------------- //
+// --------------------------- IMPORTS ---------------------------- //
+// ---------------------------------------------------------------- //
 import React, {useEffect, useState} from 'react';
 import {services} from '../_lib/data';
 
-// ICONS IMPORTS
+//              LOCAL DB TO SIMULATE API ON DEVELOPMENT             //
+
+import data from '../_lib/locations.json';
+
+// ---------------------- REACT ICON IMPORTS ---------------------- //
+
 import {BsFuelPumpFill} from 'react-icons/bs';
 import {FaChevronRight} from 'react-icons/fa6';
 import {IoMdSearch} from 'react-icons/io';
 import {MdMyLocation} from 'react-icons/md';
 import {RiTruckFill} from 'react-icons/ri';
 
-// LOCAL DB TO SIMULATE API
-import data from '../../../init/locations.json';
+// ----------- GOOGLE MAPS AND MAPS CONTROLLERS IMPORTS ----------- //
 
-// GOOGLE MAPS AND MAPS CONTROLLERS IMPORTS
 import {Loader} from '@googlemaps/js-api-loader';
 import LocationCard from './card';
+
 import initializeMarkers from './_mapsControllers/initializeMarkers';
 import initializeUserMarker from './_mapsControllers/initializeUserMarker';
 import getUserGeocode from './_mapsControllers/getUserGeocode';
 import getCloserPaths, {getPathAtoB} from './_mapsControllers/getPathAtoB';
 import updateLocationsDB from './_mapsControllers/updateLocationsDB';
 
+// ---------------------------------------------------------------- //
+// ---------------------------------------------------------------- //
+
 const LocationMap = () => {
-    const [selectedDiv, setSelectedDiv] = useState(2);
-    const mapRef = React.useRef<HTMLDivElement>(null);
+    const [selectedDiv, setSelectedDiv] = useState(2); // ........................ FILTER AND STATIONS MENU
 
-    const hasLocationBeenSorted = React.useRef(false);
+    const mapRef = React.useRef<HTMLDivElement>(null); // ........................ REFERENCING MAP DIV FOR GOOGLE MAPS
 
-    const [userGeocode, setUserGeocode] = useState<any>({});
+    const [userGeocode, setUserGeocode] = useState<any>({}); // .................. HOLDS USER GEOCODE / OR CHOOSEN GEOCODE (LOCATION)
+    // const [locationsRawDB, setLocationsRawDB] = useState<any[]>(); // ............ INITIAL DATA FETCH, HOLDS RAW DATA FROM DB
+    const [locationsRawDB, setLocationsRawDB] = useState<any[]>(data); // ..... RAW DATA FROM LOCAL JSON
+    const [locationsUpdatedDB, setLocationsUpdatedDB] = useState<any[]>([]); // .. HOLDS UPDATED DATA FROM DB WITH DISTANCE AND DURATION
+    const [locationsDB, setLocationsDB] = useState<any[]>([]); // ................ HOLDS FINAL REVISION DATA FROM DB (SORTED, FILTERED, ETC...)
 
-    const [locationsRawDB, setLocationsRawDB] = useState<any[]>();
-    const [locationsUpdatedDB, setLocationsUpdatedDB] = useState<any[]>([]);
-    const [locationsDB, setLocationsDB] = useState<any[]>([]);
-
-    const [locationsElements, setLocationsElements] = useState<any[]>([]);
+    const [locationsElements, setLocationsElements] = useState<any[]>([]); // .... HOLDS LOCATION CARDS ELEMENTS
 
     // ---------------------------------------------------------------- //
     // ------------------------- useEffects() ------------------------- //
@@ -46,18 +55,17 @@ const LocationMap = () => {
         async function getAndSetUserGeocode() {
             const geocode = await getUserGeocode();
             setUserGeocode(geocode);
-            hasLocationBeenSorted.current = true;
         }
         getAndSetUserGeocode();
     }, []);
 
     // ------------------ FETCHING LOCATIONS FROM DB ------------------ //
 
-    useEffect(() => {
-        fetch('http://0.0.0.0:3000/api/get-locations')
-            .then(res => res.json())
-            .then(locations => setLocationsRawDB(locations));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://0.0.0.0:3000/api/get-locations')
+    //         .then(res => res.json())
+    //         .then(locations => setLocationsRawDB(locations));
+    // }, []);
 
     // -------------- CALCULATING DISTANCE AND DURATION  -------------- //
     // ---------------- AND CREATING LOCAL UPDATED DB ----------------- //
@@ -120,39 +128,29 @@ const LocationMap = () => {
             // set mapRef to the BUILT MAP
             const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
 
-            /* 
-                Google Distance Matrix API demands to work with a map instance. 
-                My guess is so people don't use google API to feed other companies services.
-
-                That said. The updatedLocationsDB relies on this API to work. So I had to keep 
-                it here. Because of that any other function that falls on the updatedLocationsDB
-                to work, have to be called here. 
-                
-                Not Ideal, but that's the way it works.
-            */
-
             updateLocationsDB(locationsRawDB, userGeocode).then(updatedDB => {
-                // getCloserPaths(map, userGeocode, locationsDB);
+                /* 
+                    Google Distance Matrix API demands to work with a map instance. 
+                    My guess is so people don't use google API to feed other companies services.
+    
+                    That said. The updatedLocationsDB relies on this API to work. So I had to keep 
+                    it here. Because of that any other function that falls under the updatedLocationsDB
+                    to work, have to be called here. 
+    
+                    It also prevents a bunch of untimed renders and API calls.
+                    
+                    Not Ideal, but that's the way it works.
+                */
+                console.log(updatedDB);
+                initializeUserMarker(map, userGeocode);
                 getCloserPaths(map, userGeocode, updatedDB);
                 setLocationsUpdatedDB(updatedDB);
+                initializeMarkers(map, updatedDB || []);
             });
-
-            // ONLY INITIALIZE USER MARKERS AND PATHS IF USER GEOCODE IS AVAILABLE
-            // (Safe Clause to prevent unecessary requests)
-
-            initializeMarkers(map, locationsRawDB || []);
-
-            if (userGeocode) {
-                initializeUserMarker(map, userGeocode);
-                // getPathAtoB(map, userGeocode);
-                // getPathAtoB(map, userGeocode, {lat: -36.8185, lng: 174.7671});
-            }
         };
-        if (hasLocationBeenSorted.current) {
-            initMap();
-            hasLocationBeenSorted.current = true;
-        }
-    }, [userGeocode, hasLocationBeenSorted, locationsRawDB]);
+
+        initMap();
+    }, [userGeocode, locationsRawDB]);
 
     // ---------------------------------------------------------------- //
     // -------------------------- COMPONENT --------------------------- //

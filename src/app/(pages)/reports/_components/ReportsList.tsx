@@ -2,19 +2,20 @@
 import ReportCard from './ReportCard';
 import {useEffect, useState} from 'react';
 import {T_Report} from '@/app/_lib/types/T_Report';
+import data from '../../../_lib/reports.json';
 
 export default async function ReportsList() {
-    const [reports, setReports] = useState<any>();
+    const [reports, setReports] = useState<any>(data);
 
-    const getReports = () => {
-        fetch('http://0.0.0.0:3000/api/reports')
-            .then(res => res.json())
-            .then(reports => {
-                setReports(reports);
-            });
-    };
+    // const getReports = () => {
+    //     fetch('http://0.0.0.0:3000/api/reports')
+    //         .then(res => res.json())
+    //         .then(reports => {
+    //             setReports(reports);
+    //         });
+    // };
 
-    useEffect(() => getReports(), []);
+    // useEffect(() => getReports(), []);
 
     return (
         <>
