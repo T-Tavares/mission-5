@@ -1,6 +1,6 @@
 "use client";
 import { Popover, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { products } from "../_lib/data";
@@ -13,9 +13,27 @@ const useToggle = (
   initialState = false
 ): [boolean, (event: React.MouseEvent<HTMLButtonElement>) => void] => {
   const [state, setState] = useState(initialState);
+
   const toggle = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setState(!state);
+    event.stopPropagation(); // Prevent calling document click event
+    setState((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      setState(false);
+    };
+
+    if (state) {
+      document.addEventListener('click', handleClickOutside); 
+    } else {
+      document.removeEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside); // Cleanup
+    };
+  }, [state]);
 
   return [state, toggle];
 };
