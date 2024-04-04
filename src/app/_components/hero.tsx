@@ -128,9 +128,9 @@ const Hero = () => {
                             </p>
                         </div>
                         <div className="flex w-[13rem] py-9 ">
-                            <button className="px-6 py-2 w-full whitespace-nowrap text-primary text-lg font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">
+                            <Link href="/reports"><button className="px-9 py-2 w-full whitespace-nowrap text-primary text-lg font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">
                                 Find out more
-                            </button>
+                            </button></Link>
                         </div>
                     </div>
                 </div>

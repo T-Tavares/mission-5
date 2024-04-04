@@ -13,7 +13,7 @@ const Footer = () => {
 
         <div className="flex flex-col">
 
-        <div className="flex flex-col sm:flex sm:flex-row sm:justify-evenly p-8">
+        <div className="flex flex-col sm:flex sm:flex-row sm:justify-evenly p-4 sm:p-8">
 
         <div className="flex pb-8 sm:flex sm:flex-1">
           <a href="/" className="-m-1.5 p-1.5 pt-6">
@@ -117,11 +117,11 @@ const Footer = () => {
         </div>
 
         <div className="flex justify-center sm:flex sm:flex-1 sm:justify-end">
-          <div className="flex flex-col">
+          <div className="flex flex-row xl:flex xl:flex-col">
         <div className=" w-[10rem]  py-4 ">
               <button className="px-6 p-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">Contact Us</button>
               </div>
-        <div className="flex justify-center text-primary text-4xl gap-4">
+        <div className="flex justify-center pl-10 pt-4 text-primary text-4xl gap-4 xl:pl-0 xl-pt-0 ">
           <FaFacebook/>
           <FaLinkedin/>
           <FaInstagram/>
@@ -131,15 +131,15 @@ const Footer = () => {
 
         </div>
 
-        <div className="flex flex-col border-t-[0.12rem] border-gray-400/60 mx-10 py-2 xl:flex xl:flex-row">   
+        <div className="flex flex-col  border-t-[0.12rem] border-gray-400/60 mx-4 lg:flex lg:flex-row lg:mx-8 py-2 xl:flex xl:flex-row">   
 
-        <div className="flex flex-col py-2 xl:gap-[4rem] xl:flex xl:flex-1 xl:flex-row">
+        <div className="flex flex-col py-2  lg:gap-[4rem] lg:flex lg:flex-1 lg:flex-row">
           <p>Privacy</p>
           <p>Terms of use</p>
           <p>Fuel Safety Data Sheets</p>
           <p>Investor Relations</p>
         </div>
-        <div className="py-2">
+        <div className="py-2 ">
           <a>Z Energy Limited</a>
         </div>
 

@@ -173,7 +173,7 @@ const LocationMap = () => {
 
             <div className="flex flex-col pt-8">
                 <h1 className="text-2xl font-medium">Find a station</h1>
-                <div className="flex  pt-4">
+                <div className="hidden xl:flex  pt-4">
                     <div className="flex flex-1">
                         <div className="flex relative">
                             <input
@@ -203,8 +203,8 @@ const LocationMap = () => {
                 </div>
             </div>
 
-            <div className="flex w-full h-[58rem]  rounded-3xl mt-10">
-                <div className="flex flex-col border-2 border-gray-200 rounded-l-3xl h-full ">
+            <div className="flex flex-col xl:flex xl:flex-row w-full h-[58rem]  rounded-3xl mt-9">
+                <div className="hidden xl:flex xl:flex-col border-2 border-gray-200 rounded-l-3xl h-full ">
                     <div className="flex justify-center w-[21rem]">
                         <div className="flex w-full justify-center py-4 font-medium cursor-pointer">
                             <h3 onClick={() => setSelectedDiv(1)} className="active:scale-95 hover:scale-105">
@@ -270,7 +270,10 @@ const LocationMap = () => {
                     )}
                 </div>
 
-                <div ref={mapRef} className="w-full  rounded-r-3xl" />
+                <div ref={mapRef} className="w-full  rounded-r-3xl hidden xl:flex" />
+                <div className='flex justify-center text-2xl xl:hidden'>
+                <p>Under maintenance 😒</p>
+                </div>
             </div>
         </section>
     );
