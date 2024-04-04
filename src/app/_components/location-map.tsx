@@ -30,7 +30,7 @@ import getCloserPaths, {getPathAtoB} from './_mapsControllers/getPathAtoB';
 import updateLocationsDB from './_mapsControllers/updateLocationsDB';
 
 // ---------------------------------------------------------------- //
-// ---------------------------------------------------------------- //.
+// ---------------------------------------------------------------- //
 
 const LocationMap = () => {
     const [selectedDiv, setSelectedDiv] = useState(2); // ........................ FILTER AND STATIONS MENU
@@ -38,8 +38,8 @@ const LocationMap = () => {
     const mapRef = React.useRef<HTMLDivElement>(null); // ........................ REFERENCING MAP DIV FOR GOOGLE MAPS
 
     const [userGeocode, setUserGeocode] = useState<any>({}); // .................. HOLDS USER GEOCODE / OR CHOOSEN GEOCODE (LOCATION)
-    // const [locationsRawDB, setLocationsRawDB] = useState<any[]>(); // ............ INITIAL DATA FETCH, HOLDS RAW DATA FROM DB
-    const [locationsRawDB, setLocationsRawDB] = useState<any[]>(data); // ..... RAW DATA FROM LOCAL JSON
+    // const [locationsRawDB, setLocationsRawDB] = useState<any[]>(); // ......... INITIAL DATA FETCH, HOLDS RAW DATA FROM DB
+    const [locationsRawDB, setLocationsRawDB] = useState<any[]>(data); // ........ RAW DATA FROM LOCAL JSON
     const [locationsUpdatedDB, setLocationsUpdatedDB] = useState<any[]>([]); // .. HOLDS UPDATED DATA FROM DB WITH DISTANCE AND DURATION
     const [locationsDB, setLocationsDB] = useState<any[]>([]); // ................ HOLDS FINAL REVISION DATA FROM DB (SORTED, FILTERED, ETC...)
 
@@ -61,11 +61,11 @@ const LocationMap = () => {
 
     // ------------------ FETCHING LOCATIONS FROM DB ------------------ //
 
-    // useEffect(() => {
-    //     fetch('http://0.0.0.0:3000/api/get-locations')
-    //         .then(res => res.json())
-    //         .then(locations => setLocationsRawDB(locations));
-    // }, []);
+    useEffect(() => {
+        fetch('http://0.0.0.0:3000/api/get-locations')
+            .then(res => res.json())
+            .then(locations => setLocationsRawDB(locations));
+    }, []);
 
     // -------------- CALCULATING DISTANCE AND DURATION  -------------- //
     // ---------------- AND CREATING LOCAL UPDATED DB ----------------- //
