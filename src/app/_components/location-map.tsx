@@ -30,7 +30,7 @@ import getCloserPaths, {getPathAtoB} from './_mapsControllers/getPathAtoB';
 import updateLocationsDB from './_mapsControllers/updateLocationsDB';
 
 // ---------------------------------------------------------------- //
-// ---------------------------------------------------------------- //
+// ---------------------------------------------------------------- //.
 
 const LocationMap = () => {
     const [selectedDiv, setSelectedDiv] = useState(2); // ........................ FILTER AND STATIONS MENU
