@@ -28,12 +28,13 @@ import initializeUserMarker from './_mapsControllers/initializeUserMarker';
 import getUserGeocode from './_mapsControllers/getUserGeocode';
 import getCloserPaths, {getPathAtoB} from './_mapsControllers/getPathAtoB';
 import updateLocationsDB from './_mapsControllers/updateLocationsDB';
+import filterDatabase from './_mapsControllers/filterDatabase';
 
 // ---------------------------------------------------------------- //
 // ---------------------------------------------------------------- //
 
 const LocationMap = () => {
-    const [selectedDiv, setSelectedDiv] = useState(2); // ........................ FILTER AND STATIONS MENU
+    const [selectedDiv, setSelectedDiv] = useState(1); // ........................ FILTER AND STATIONS MENU
 
     const mapRef = React.useRef<HTMLDivElement>(null); // ........................ REFERENCING MAP DIV FOR GOOGLE MAPS
 
@@ -44,6 +45,24 @@ const LocationMap = () => {
     const [locationsDB, setLocationsDB] = useState<any[]>([]); // ................ HOLDS FINAL REVISION DATA FROM DB (SORTED, FILTERED, ETC...)
 
     const [locationsElements, setLocationsElements] = useState<any[]>([]); // .... HOLDS LOCATION CARDS ELEMENTS
+    const [filters, setFilters] = useState<string[]>([]); // ..................... HOLDS FILTERS TO BE APPLIED TO LOCATIONS DB
+
+    // ---------------------------------------------------------------- //
+
+    const filtersHandler = (e: any) => {
+        let newFilters;
+
+        const buttonName = e.target.closest('button').name;
+        const isFiltering = filters.includes(e.target.closest('button').name);
+
+        if (isFiltering) {
+            newFilters = filters.filter(target => target !== buttonName);
+        } else {
+            newFilters = [...filters, buttonName];
+        }
+
+        setFilters(newFilters);
+    };
 
     // ---------------------------------------------------------------- //
     // ------------------------- useEffects() ------------------------- //
@@ -61,11 +80,11 @@ const LocationMap = () => {
 
     // ------------------ FETCHING LOCATIONS FROM DB ------------------ //
 
-    useEffect(() => {
-        fetch('http://0.0.0.0:3000/api/get-locations')
-            .then(res => res.json())
-            .then(locations => setLocationsRawDB(locations));
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://0.0.0.0:3000/api/get-locations')
+    //         .then(res => res.json())
+    //         .then(locations => setLocationsRawDB(locations));
+    // }, []);
 
     // -------------- CALCULATING DISTANCE AND DURATION  -------------- //
     // ---------------- AND CREATING LOCAL UPDATED DB ----------------- //
@@ -128,29 +147,52 @@ const LocationMap = () => {
             // set mapRef to the BUILT MAP
             const map = new Map(mapRef.current as HTMLDivElement, mapOptions);
 
-            updateLocationsDB(locationsRawDB, userGeocode).then(updatedDB => {
-                /* 
-                    Google Distance Matrix API demands to work with a map instance. 
-                    My guess is so people don't use google API to feed other companies services.
-    
-                    That said. The updatedLocationsDB relies on this API to work. So I had to keep 
-                    it here. Because of that any other function that falls under the updatedLocationsDB
-                    to work, have to be called here. 
-    
-                    It also prevents a bunch of untimed renders and API calls.
-                    
-                    Not Ideal, but that's the way it works.
-                */
-                console.log(updatedDB);
-                initializeUserMarker(map, userGeocode);
-                getCloserPaths(map, userGeocode, updatedDB);
-                setLocationsUpdatedDB(updatedDB);
-                initializeMarkers(map, updatedDB || []);
-            });
+            /* 
+                Google Distance Matrix API demands to work with a map instance. 
+                My guess is so people don't use google API to feed other companies services.
+
+                That said. The updatedLocationsDB relies on this API to work. So I had to keep 
+                it here. Because of that any other function that falls under the updatedLocationsDB
+                to work, have to be called here. 
+
+                It also prevents a bunch of untimed renders and API calls.
+                
+                Not Ideal, but that's the way it works.
+            */
+
+            updateLocationsDB(locationsRawDB, userGeocode)
+                .then(updatedDB => filterDatabase(updatedDB, filters))
+                .then(filteredDB => {
+                    initializeUserMarker(map, userGeocode);
+                    getCloserPaths(map, userGeocode, filteredDB);
+                    setLocationsUpdatedDB(filteredDB);
+                    initializeMarkers(map, filteredDB || []);
+                });
+
+            // updateLocationsDB(locationsRawDB, userGeocode).then(updatedDB => {
+            //     const filteredDB = filterDatabase(updatedDB, filters);
+            //     /*
+            //         Google Distance Matrix API demands to work with a map instance.
+            //         My guess is so people don't use google API to feed other companies services.
+
+            //         That said. The updatedLocationsDB relies on this API to work. So I had to keep
+            //         it here. Because of that any other function that falls under the updatedLocationsDB
+            //         to work, have to be called here.
+
+            //         It also prevents a bunch of untimed renders and API calls.
+
+            //         Not Ideal, but that's the way it works.
+            //     */
+
+            //     initializeUserMarker(map, userGeocode);
+            //     getCloserPaths(map, userGeocode, filteredDB);
+            //     setLocationsUpdatedDB(filteredDB);
+            //     initializeMarkers(map, filteredDB || []);
+            // });
         };
 
         initMap();
-    }, [userGeocode, locationsRawDB]);
+    }, [userGeocode, locationsRawDB, filters]);
 
     // ---------------------------------------------------------------- //
     // -------------------------- COMPONENT --------------------------- //
@@ -249,14 +291,23 @@ const LocationMap = () => {
                                     <h3 className="font-medium text-base">Services</h3>
                                 </div>
                                 <div className="flex flex-col gap-4 w-[14rem] mx-auto">
-                                    {services.map((service, index) => (
-                                        <div key={index} className="">
-                                            <button className="relative px-8 py-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-gray-200 transition-all active:scale-95">
-                                                <div className="absolute text-2xl pr-4 left-4">{service.icon}</div>
-                                                <div className="text-lg">{service.name}</div>
-                                            </button>
-                                        </div>
-                                    ))}
+                                    {services.map((service, index) => {
+                                        const buttonName = `${service.name.toLowerCase().replaceAll(' ', '-')}`;
+                                        return (
+                                            <div key={index} className="">
+                                                <button
+                                                    name={buttonName}
+                                                    onClick={filtersHandler}
+                                                    className="relative px-8 py-2 w-full whitespace-nowrap text-primary font-medium rounded-full border-2 border-gray-200 transition-all active:scale-95"
+                                                >
+                                                    <div className={`absolute text-2xl pr-4 left-4`}>
+                                                        {service.icon}
+                                                    </div>
+                                                    <div className={`text-lg`}>{service.name}</div>
+                                                </button>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>
@@ -271,8 +322,8 @@ const LocationMap = () => {
                 </div>
 
                 <div ref={mapRef} className="w-full  rounded-r-3xl hidden xl:flex" />
-                <div className='flex justify-center text-2xl xl:hidden'>
-                <p>Under maintenance 😒</p>
+                <div className="flex justify-center text-2xl xl:hidden">
+                    <p>Under maintenance 😒</p>
                 </div>
             </div>
         </section>

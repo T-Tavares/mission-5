@@ -25,14 +25,14 @@ export default function LocationCard({location}: any) {
     const services = () => {
         return (
             <div className="flex mt-5 text-3xl gap-3 flex-wrap">
-                {location.services.trailerHire && <FaTrailer />}
-                {location.services.carWash && <BiSolidCarWash />}
-                {location.services.tirePressure && <GiCarWheel />}
-                {location.services.foodnDrink && <FaUtensils />}
-                {location.services.toilet && <BiMaleFemale />}
-                {location.services.ATM && <MdLocalAtm />}
-                {location.services.EVcharging && <RiChargingPileFill />}
-                {location.services.LPGbottleSwap && <MdGasMeter />}
+                {location.services.trailer_hire && <FaTrailer />}
+                {location.services.car_wash && <BiSolidCarWash />}
+                {location.services.tire_pressure && <GiCarWheel />}
+                {location.services.food_and_drink && <FaUtensils />}
+                {location.services.toilets && <BiMaleFemale />}
+                {location.services.atm && <MdLocalAtm />}
+                {location.services.ev_charging && <RiChargingPileFill />}
+                {location.services.lpg_bottle_swap && <MdGasMeter />}
             </div>
         );
     };

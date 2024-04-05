@@ -13,14 +13,14 @@
         },
         "type": "Service Station",
         "services": {
-            "trailerHire": false,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": true,
-            "toilet": false,
-            "ATM": false,
-            "EVcharging": false,
-            "LPGbottleSwap": true
+            "trailer_hire": false,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": true,
+            "toilets": false,
+            "atm": false,
+            "ev_charging": false,
+            "lpg_bottle_swap": true
         }
     },
     {
@@ -37,14 +37,14 @@
         },
         "type": "Service Station",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": false,
-            "foodnDrink": true,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": false,
+            "food_and_drink": true,
+            "toilets": false,
             "ATM": true,
-            "EVcharging": false,
-            "LPGbottleSwap": false
+            "ev_charging": false,
+            "lpg_bottle_swap": false
         }
     },
     {
@@ -61,14 +61,14 @@
         },
         "type": "Service Station",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": false,
-            "foodnDrink": true,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": false,
+            "food_and_drink": true,
+            "toilets": false,
             "ATM": true,
-            "EVcharging": true,
-            "LPGbottleSwap": true
+            "ev_charging": true,
+            "lpg_bottle_swap": true
         }
     },
     {
@@ -85,14 +85,14 @@
         },
         "type": "Service Station",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": true,
-            "toilet": true,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": true,
+            "toilets": true,
             "ATM": true,
-            "EVcharging": true,
-            "LPGbottleSwap": true
+            "ev_charging": true,
+            "lpg_bottle_swap": true
         }
     },
     {
@@ -109,14 +109,14 @@
         },
         "type": "Truck Stop",
         "services": {
-            "trailerHire": true,
-            "carWash": false,
-            "tirePressure": true,
-            "foodnDrink": true,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": false,
+            "tire_pressure": true,
+            "food_and_drink": true,
+            "toilets": false,
             "ATM": false,
-            "EVcharging": false,
-            "LPGbottleSwap": false
+            "ev_charging": false,
+            "lpg_bottle_swap": false
         }
     },
     {
@@ -133,14 +133,14 @@
         },
         "type": "Truck Stop",
         "services": {
-            "trailerHire": true,
-            "carWash": false,
-            "tirePressure": false,
-            "foodnDrink": true,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": false,
+            "tire_pressure": false,
+            "food_and_drink": true,
+            "toilets": false,
             "ATM": false,
-            "EVcharging": true,
-            "LPGbottleSwap": true
+            "ev_charging": true,
+            "lpg_bottle_swap": true
         }
     },
     {
@@ -157,14 +157,14 @@
         },
         "type": "Truck Stop",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": false,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": false,
+            "toilets": false,
             "ATM": false,
-            "EVcharging": true,
-            "LPGbottleSwap": false
+            "ev_charging": true,
+            "lpg_bottle_swap": false
         }
     },
     {
@@ -181,14 +181,14 @@
         },
         "type": "Truck Stop",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": false,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": false,
+            "toilets": false,
             "ATM": false,
-            "EVcharging": true,
-            "LPGbottleSwap": false
+            "ev_charging": true,
+            "lpg_bottle_swap": false
         }
     },
     {
@@ -199,14 +199,14 @@
         "geocode": {"lat": -43.543591, "lng": 172.68016},
         "type": "Truck Stop",
         "services": {
-            "trailerHire": true,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": false,
-            "toilet": false,
+            "trailer_hire": true,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": false,
+            "toilets": false,
             "ATM": false,
-            "EVcharging": true,
-            "LPGbottleSwap": false
+            "ev_charging": true,
+            "lpg_bottle_swap": false
         }
     },
     {
@@ -217,14 +217,14 @@
         "geocode": {"lat": -43.518589, "lng": 172.542193},
         "type": "Service Station",
         "services": {
-            "trailerHire": false,
-            "carWash": true,
-            "tirePressure": true,
-            "foodnDrink": true,
-            "toilet": false,
+            "trailer_hire": false,
+            "car_wash": true,
+            "tire_pressure": true,
+            "food_and_drink": true,
+            "toilets": false,
             "ATM": true,
-            "EVcharging": false,
-            "LPGbottleSwap": true
+            "ev_charging": false,
+            "lpg_bottle_swap": true
         }
     }
 ]

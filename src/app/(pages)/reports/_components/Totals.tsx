@@ -1,5 +1,4 @@
 export default function Totals({totals}: {totals: number[]}) {
-    // On this order => Meetings - Meetings Time - Blockers
     const [meetings, meetingsTime, blockers] = totals;
     const meetingsHours = Math.floor(meetingsTime / 60);
     const meetingsMinutes = Math.round((meetingsTime / 60 - meetingsHours) * 60);
