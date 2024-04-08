@@ -1,4 +1,4 @@
-export default function filterDatabase(locationsDB: any, filtersArr: any[]) {
+export default function filterDatabase(locationsDB: any, filtersArr: any) {
     return new Promise((resolve, reject) => {
         let filteringDB = locationsDB;
         try {

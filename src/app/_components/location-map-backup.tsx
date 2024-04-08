@@ -21,7 +21,7 @@ import {RiTruckFill} from 'react-icons/ri';
 // ----------- GOOGLE MAPS AND MAPS CONTROLLERS IMPORTS ----------- //
 
 import {Loader} from '@googlemaps/js-api-loader';
-import LocationCard from './card';
+import LocationCard from './LocationMap/MapAndMenu/Menu/Stations/card';
 
 import initializeMarkers from './_mapsControllers/initializeMarkers';
 import initializeUserMarker from './_mapsControllers/initializeUserMarker';
@@ -163,6 +163,8 @@ const LocationMap = () => {
             updateLocationsDB(locationsRawDB, userGeocode)
                 .then(updatedDB => filterDatabase(updatedDB, filters))
                 .then(filteredDB => {
+                    console.log(filteredDB);
+
                     initializeUserMarker(map, userGeocode);
                     getCloserPaths(map, userGeocode, filteredDB);
                     setLocationsUpdatedDB(filteredDB);

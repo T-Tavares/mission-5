@@ -1,10 +1,13 @@
-import LocationMap from "@/app/_components/location-map"
+import LocationMap from '@/app/_components/LocationMap';
+import {MapProvider} from '@/app/_context/MapContext';
 
 const Location = () => {
-  return (
-    <>
-    <LocationMap/>
-    </>
-  )
-}
-export default Location
+    return (
+        <>
+            <MapProvider>
+                <LocationMap />
+            </MapProvider>
+        </>
+    );
+};
+export default Location;

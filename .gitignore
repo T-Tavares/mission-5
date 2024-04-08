@@ -2,6 +2,7 @@
 
 # noise files
 Dockerfile-backup*
+init*
 
 # security
 .env
