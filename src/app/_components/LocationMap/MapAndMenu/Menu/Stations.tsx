@@ -10,8 +10,8 @@ export default function Stations() {
 
     useEffect(() => {
         if (locationsDB) {
-            const cards = locationsDB.map(location => {
-                return <LocationCard key={location.name} location={location} />;
+            const cards = locationsDB.map((location, index) => {
+                return <LocationCard key={index + location.name} location={location} />;
             });
             setLocationsCards(cards);
         }

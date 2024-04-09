@@ -3,7 +3,6 @@ import React, {createContext, useContext, useEffect, useState} from 'react';
 import data from '../_lib/locations.json'; // temporary data
 import {useLocation} from './LocationContext';
 import {useMap} from './MapContext';
-import {text} from 'stream/consumers';
 
 // ---------------------------------------------------------------- //
 // ------------------------ DATABASE TYPES ------------------------ //
@@ -112,18 +111,7 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
 
     const _getDistanceMatrix = async (geocodeMatrix: {lat: number; lng: number}[]) => {
         // Initialize Google API Service
-        /* 
-            Calling DistanceMatrixService was giving me an error that it wasnt a constructor.
-            All the code examples it's been called inside the initMap function and it runs fine...
-            But that defeats the purporse of breaking the whole code and make it reusable.
-            
-            God know how i figured that out...
-            But this link helped me on that.
-            https://developers.google.com/maps/documentation/javascript/libraries
 
-            I mirrored how they called other Constructs like Map and AdvancedMarkerElement
-
-        */
         const {DistanceMatrixService} = (await google.maps.importLibrary('routes')) as google.maps.RoutesLibrary;
         const service = new DistanceMatrixService();
         const originsArr: any = geocodeMatrix.map(userLocation => userLocation);
@@ -171,11 +159,17 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
             })
             .filter((location: any) => location);
 
-        console.log('updatedLocationsDB', updatedLocationsDB);
-
         setLocationsDB(updatedLocationsDB);
     };
 
+    /* 
+        The useEffects work as an async await on this project.
+        Since some components and logic depend on the previous useEffects to be completed.
+        
+        The if statements seems redundant but they prevent the functions to be initiated while promises are being resolved.
+        They also CAN NOT be used in a single line if. It'll throw the useEffect into an infinite loop in most cases.
+    
+    */
     useEffect(() => {
         setRawDatabase(data);
     }, []);

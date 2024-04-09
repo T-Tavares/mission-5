@@ -13,7 +13,7 @@ export default function MapAndMenu() {
         <div className="flex flex-col xl:flex xl:flex-row w-full h-[58rem]  rounded-3xl mt-9">
             <Menu />
             {!userLocation && <PickYourLocation />}
-            <div ref={mapRef} className="w-full  rounded-r-3xl hidden xl:flex" />
+            {userLocation && <div ref={mapRef} className="w-full  rounded-r-3xl hidden xl:flex" />}
         </div>
     );
 }
