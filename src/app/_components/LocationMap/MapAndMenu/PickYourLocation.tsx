@@ -1,12 +1,14 @@
-import {useMapContext} from '@/app/_context/MapContext';
-
+import {useLocation} from '@/app/_context/LocationContext';
 export default function PickYourLocation() {
-    const {getUserGeolocation} = useMapContext();
+    const {getUserGeocode} = useLocation();
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-full bg-gray-200/70 gap-6">
             <h2 className="font-medium text-lg">First things first. We need a starting location.</h2>
-            <button onClick={getUserGeolocation} className="w-4/5 px-4 py-2 text-white bg-primary rounded-full">
+            <button
+                onClick={getUserGeocode}
+                className="w-4/5 px-4 py-2 text-white bg-primary rounded-full transition-transform duration-300 hover:scale-105 active:scale-100"
+            >
                 Use current location
             </button>
             <input

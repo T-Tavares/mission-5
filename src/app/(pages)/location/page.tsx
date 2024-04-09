@@ -1,12 +1,20 @@
 import LocationMap from '@/app/_components/LocationMap';
+import {LocationProvider} from '@/app/_context/LocationContext';
+import {DatabaseProvider} from '@/app/_context/DatabaseContext';
 import {MapProvider} from '@/app/_context/MapContext';
 
 const Location = () => {
     return (
         <>
-            <MapProvider>
-                <LocationMap />
-            </MapProvider>
+            <LocationProvider>
+                <MapProvider>
+                    <DatabaseProvider>
+                        <MapProvider>
+                            <LocationMap />
+                        </MapProvider>
+                    </DatabaseProvider>
+                </MapProvider>
+            </LocationProvider>
         </>
     );
 };

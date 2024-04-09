@@ -1,23 +1,25 @@
 'use client';
 
 import React, {createContext, useContext, useEffect, useState} from 'react';
+import {useLocation} from './LocationContext';
 import {Loader} from '@googlemaps/js-api-loader';
+
+// ---------------------------------------------------------------- //
+// -------------------------- MAP TYPES --------------------------- //
+// ---------------------------------------------------------------- //
 
 type T_MapRef = React.RefObject<HTMLDivElement> | null | undefined;
 type T_mapState = google.maps.Map | undefined | null;
 type T_location = {lat: number; lng: number} | undefined | null;
 
-// ----------------- CREATING AND EXPORT CONTEXT ------------------ //
+// ---------------------------------------------------------------- //
+// ------------------------- MAP CONTEXT -------------------------- //
+// ---------------------------------------------------------------- //
 
 const MapContext = createContext({
     mapRef: undefined as T_MapRef,
     map: undefined as T_mapState,
     userLocation: undefined as T_location,
-
-    getUserGeolocation: () => {},
-    getUserChoosenGeolocation: () => {},
-
-    addUserReferenceToDB: () => {}, // Adds distance from user to locations returns new DB Obj
 
     initMap: () => {},
     initMarkers: () => {},
@@ -26,76 +28,27 @@ const MapContext = createContext({
     filterMarkers: () => {},
 });
 
-export const useMapContext = () => useContext(MapContext);
+export const useMap = () => useContext(MapContext);
 
-// ---------------- CREATE AND EXPORT THE PROVIDER ---------------- //
+// ---------------------------------------------------------------- //
+// ------------------------- MAP PROVIDER ------------------------- //
+// ---------------------------------------------------------------- //
 
 export const MapProvider = ({children}: {children: any}) => {
     //
-
-    /* 
-        Bare with me... That's a long section.
-
-        All the states here are shared and controlled across those methods. 
-        That's the main reason to keep them here. But that way we can reuse
-        all users interactions across multiple pages on the app.
-        And also keep the logic separated from the components.
-
-        To help you navigate this file will be full of titles and comments.
-    */
-
-    // ---------------------------------------------------------------- //
-    // --------------------- MAP STATE VARIABLES ---------------------- //
-    // ---------------------------------------------------------------- //
+    // ----------------------- useMap() STATES ------------------------ //
 
     const [map, setMap] = useState<T_mapState>();
-    const [userLocation, setUserLocation] = useState<T_location>();
-    const [zLocationsDB, setZLocationsDB] = useState([]);
-
     const mapRef: T_MapRef = React.useRef<HTMLDivElement>(null);
 
-    // ---------------------------------------------------------------- //
-    // --------------------- MapProvider METHODS ---------------------- //
-    // ---------------------------------------------------------------- //
+    // -------------------- useLocation() CONTEXT  -------------------- //
+    const {userLocation} = useLocation();
 
     // ---------------------------------------------------------------- //
-    // ----------------------- GET GEOLOCATION ------------------------ //
+    // ---------------------- useMap() METHODS ------------------------ //
     // ---------------------------------------------------------------- //
-
-    // --------------------- GET USER GEOLOCATION --------------------- //
-
-    const getUserGeolocation = () => {
-        try {
-            navigator.geolocation.getCurrentPosition(location => {
-                const userGeocode: T_location = {
-                    lat: parseFloat(location.coords.latitude.toFixed(6)),
-                    lng: parseFloat(location.coords.longitude.toFixed(6)),
-                };
-                setUserLocation(userGeocode);
-            });
-        } catch (error: any) {
-            return new Error('Error getting user geolocation', error);
-        }
-    };
-
-    // -------------------- USER PICK GEOLOCATION --------------------- //
-
-    const getUserChoosenGeolocation = () => {};
-
-    // ---------------- INITIALISE MAP AFTER LOCATION ----------------- //
-
-    // After a Location is choosen by the user, this useEffect will initialize the map.
-    useEffect(() => {
-        /* 
-            Because useEffect runs on the initial website render. this is a safe clause 
-            to only render the map if the user has choose a location.
-        */
-        if (userLocation) initMap();
-    }, [userLocation]);
 
     // ------------------- INITIALIZE MAP FUNCTION -------------------- //
-
-    // Loads a Google Map API and store it in the map state.
 
     const initMap = async () => {
         const loader = new Loader({
@@ -104,12 +57,12 @@ export const MapProvider = ({children}: {children: any}) => {
         });
 
         const {Map} = await loader.importLibrary('maps');
-        const position: any = {lat: -36.798969, lng: 174.741641};
+        const position: any = userLocation;
 
         // MAP OPTIONS
         const mapOptions: google.maps.MapOptions = {
             center: position,
-            zoom: 12,
+            zoom: 14,
             mapId: 'MY_NEXTJS_MAPID',
         };
 
@@ -119,33 +72,40 @@ export const MapProvider = ({children}: {children: any}) => {
     };
 
     // ---------------------------------------------------------------- //
-    // ----------------------- MAP INTERACTIONS ----------------------- //
-    // ---------------------------------------------------------------- //
 
     const initMarkers = () => {};
-    const initUserMarker = () => {};
+    const initUserMarker = async () => {
+        const {AdvancedMarkerElement} = (await google.maps.importLibrary('marker')) as google.maps.MarkerLibrary;
 
+        const marker = new AdvancedMarkerElement({
+            map: map,
+            position: userLocation,
+            title: "You're Here!",
+        });
+    };
     const filterMarkers = () => {};
 
-    const addUserReferenceToDB = () => {}; // TODO MOVE TO DATABASE CONTEXT
+    useEffect(() => {
+        //
+        if (userLocation) {
+            initMap();
+            initUserMarker();
+        }
+    }, [userLocation]);
 
     return (
         <MapContext.Provider
             value={{
                 mapRef,
                 map,
-                userLocation,
-
-                getUserGeolocation,
-                getUserChoosenGeolocation,
-
-                addUserReferenceToDB,
 
                 initMap,
                 initMarkers,
                 initUserMarker,
-
                 filterMarkers,
+
+                // useLocation Context
+                userLocation,
             }}
         >
             {children})
