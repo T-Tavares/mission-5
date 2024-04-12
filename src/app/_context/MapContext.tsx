@@ -13,6 +13,7 @@ type T_MapRef = React.MutableRefObject<HTMLElement | null> | undefined | null;
 type T_mapState = google.maps.Map | undefined | null;
 type T_Geocode = {lat: number; lng: number} | undefined | null;
 type T_Location = {
+    _id: number;
     name: string;
     address: string;
     price: number;
@@ -34,9 +35,10 @@ type T_Location = {
     };
     type: string;
     services: {
+        engine_oils: boolean;
         trailer_hire: boolean;
         car_wash: boolean;
-        tire_pressure: boolean;
+        tyre_pressure: boolean;
         food_and_drink: boolean;
         toilets: boolean;
         atm: boolean;
@@ -55,6 +57,7 @@ const MapContext = createContext({
     map: undefined as T_mapState,
     userLocation: undefined as T_Geocode,
     locationsDB: undefined as T_Database,
+    markersRef: undefined as Array<[]> | null | undefined,
 
     initMap: () => {},
     initMarkers: () => {},
@@ -75,6 +78,7 @@ export const MapProvider = ({children}: {children: any}) => {
 
     const [map, setMap] = useState<T_mapState>(null);
     const mapRef = useRef<HTMLElement>(null);
+    const markersRef = useRef<Array<any> | null>(null);
 
     // ----------- useLocation() AND useDatabase() CONTEXTS ----------- //
 
@@ -132,7 +136,7 @@ export const MapProvider = ({children}: {children: any}) => {
     // ------------------- INITIALIZE MARKERS FUNCTION ----------------- //
 
     const initMarkers = async () => {
-        locationsDB?.forEach(async (location: T_Location) => {
+        const markersPromises = (locationsDB || []).map(async (location: T_Location) => {
             const {AdvancedMarkerElement} = (await google.maps.importLibrary('marker')) as google.maps.MarkerLibrary;
 
             const markerDiv = document.createElement('div');
@@ -148,10 +152,24 @@ export const MapProvider = ({children}: {children: any}) => {
                 position: location.geocode,
                 content: markerDiv,
             });
+
+            return {
+                _id: location._id,
+                marker: marker,
+            };
         });
+
+        const markersArr = await Promise.all(markersPromises);
+        markersRef.current = markersArr;
     };
 
-    const filterMarkers = () => {};
+    const filterMarkers = () => {
+        console.log(markersRef.current);
+
+        markersRef.current?.forEach((marker: any) => {
+            if (marker._id % 2 === 0) marker.marker.setMap(null);
+        });
+    };
 
     // ---------------------------------------------------------------- //
     // -------------------- MAP CONTEXT USEEFFECTS -------------------- //
@@ -191,6 +209,12 @@ export const MapProvider = ({children}: {children: any}) => {
         }
     }, [map, locationsDB]);
 
+    // useEffect(() => {
+    //     if (markersRef) {
+    //         console.log(markersRef);
+    //     }
+    // }, [markersRef]);
+
     // ---------------------------------------------------------------- //
     // ----------------- MAP CONTEXT PROVIDER RETURN ------------------ //
     // ---------------------------------------------------------------- //
@@ -209,6 +233,7 @@ export const MapProvider = ({children}: {children: any}) => {
                 // Context States
                 userLocation,
                 locationsDB,
+                markersRef: markersRef.current,
             }}
         >
             {children})

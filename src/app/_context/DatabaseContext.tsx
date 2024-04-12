@@ -9,6 +9,7 @@ import {useMap} from './MapContext';
 // ---------------------------------------------------------------- //
 
 type T_Location = {
+    _id: number;
     name: string;
     address: string;
     price: number;
@@ -30,9 +31,10 @@ type T_Location = {
     };
     type: string;
     services: {
+        engine_oils: boolean;
         trailer_hire: boolean;
         car_wash: boolean;
-        tire_pressure: boolean;
+        tyre_pressure: boolean;
         food_and_drink: boolean;
         toilets: boolean;
         atm: boolean;
@@ -56,7 +58,8 @@ const DatabaseContext = createContext({
     // filteredLocationsDB: undefined as T_database,
 
     fetchRawDatabase: () => {},
-    addDistanceToLocationsDB: (rawDB: T_Database, geocode: T_Geocode) => {},
+    updateLocationsDB: () => {},
+    // addDistanceToLocationsDB: (rawDB: T_Database, geocode: T_Geocode) => {},
     // filterLocationsDB: () => {},
 });
 
@@ -135,15 +138,20 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     // ------------------- BUILD LOCATIONS DATABASE ------------------- //
     // ----------- COMBINE DISTANCE MATRIX TO RAW DATABASE ------------ //
     // ---------------------------------------------------------------- //
+    /* 
+    TODO 
+    REBUILD updateLocationsDB
+    _addDistanceToLocationsDB as internal function
 
-    const addDistanceToLocationsDB = async (rawDB: T_Database, geocode: T_Geocode) => {
-        if (!rawDB) return console.error('Add Distance to Location ERROR - No database');
-        if (!geocode) return console.error('Add Distance to Location ERROR - No user location');
+    test ways to store the markers as an array so they can be shown/hidden 
+    as we filter the DB further down.
 
-        const geocodeMatrix = [...(await _getGeocodeMatrix(rawDB))];
+*/
+    const _addDistanceToLocationsDB = async () => {
+        const geocodeMatrix = [...(await _getGeocodeMatrix(rawDatabase))];
         const distanceMatrix = await _getDistanceMatrix(geocodeMatrix);
 
-        const updatedLocationsDB = rawDB
+        const updatedLocationsDB = rawDatabase
             ?.map((location: any, index: number) => {
                 //
                 // TO KEEP THE INTEGRITY OF THE DB
@@ -159,7 +167,17 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
             })
             .filter((location: any) => location);
 
-        setLocationsDB(updatedLocationsDB);
+        return updatedLocationsDB;
+    };
+
+    const sortLocationsDB = (DB: T_Database) => {
+        return DB?.sort((a: any, b: any) => a.distance.value - b.distance.value);
+    };
+
+    const updateLocationsDB = async () => {
+        const updatedLocations = await _addDistanceToLocationsDB();
+        const sortedLocations = sortLocationsDB(updatedLocations);
+        setLocationsDB(sortedLocations);
     };
 
     /* 
@@ -176,12 +194,7 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
 
     useEffect(() => {
         if (userLocation && rawDatabase) {
-            // console.log(rawDatabase);
-
-            const rawDB = rawDatabase;
-            const geocode = userLocation;
-
-            addDistanceToLocationsDB(rawDB, geocode);
+            updateLocationsDB();
         }
     }, [userLocation]);
 
@@ -192,10 +205,8 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
             value={{
                 rawDatabase,
                 fetchRawDatabase,
-                addDistanceToLocationsDB,
+                updateLocationsDB,
                 locationsDB,
-                // filterLocationsDB,
-                // filteredLocationsDB,
                 userLocation,
             }}
         >
