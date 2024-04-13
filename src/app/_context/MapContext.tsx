@@ -47,7 +47,19 @@ type T_Location = {
     };
 };
 type T_Database = T_Location[] | undefined | null;
+type T_MarkersRef = Array<any> | null | undefined;
+type T_Services =
+    | 'engine_oils'
+    | 'trailer_hire'
+    | 'car_wash'
+    | 'tyre_pressure'
+    | 'food_and_drink'
+    | 'toilets'
+    | 'atm'
+    | 'ev_charging'
+    | 'lpg_bottle_swap';
 
+type T_Filters = null | undefined | T_Services[];
 // ---------------------------------------------------------------- //
 // ------------------------- MAP CONTEXT -------------------------- //
 // ---------------------------------------------------------------- //
@@ -57,7 +69,8 @@ const MapContext = createContext({
     map: undefined as T_mapState,
     userLocation: undefined as T_Geocode,
     locationsDB: undefined as T_Database,
-    markersRef: undefined as Array<[]> | null | undefined,
+    markersRef: undefined as T_MarkersRef,
+    filters: null as T_Filters,
 
     initMap: () => {},
     initMarkers: () => {},
@@ -79,6 +92,8 @@ export const MapProvider = ({children}: {children: any}) => {
     const [map, setMap] = useState<T_mapState>(null);
     const mapRef = useRef<HTMLElement>(null);
     const markersRef = useRef<Array<any> | null>(null);
+
+    const [filters, setFilters] = useState<T_Filters>(['toilets', 'car_wash']);
 
     // ----------- useLocation() AND useDatabase() CONTEXTS ----------- //
 
@@ -164,11 +179,11 @@ export const MapProvider = ({children}: {children: any}) => {
     };
 
     const filterMarkers = () => {
-        console.log(markersRef.current);
-
-        markersRef.current?.forEach((marker: any) => {
-            if (marker._id % 2 === 0) marker.marker.setMap(null);
-        });
+        // IF ALL FILTER UP MAKE IT FILTERS STATE EMPTY
+        // ---- IF FILTERS STATE IS EMPTY SHOW ALL MARKERS
+        // ---- IF FILTERS STATE IS NOT EMPTY SHOW FILTERED MARKERS
+        // --------- FOREACH LOOP THROUGH LOCATIONDB TO GET IDS OF MARKERS TO BE DISPLAYED
+        // --------- FOREACH LOOP THROUGH MARKERSREF TO HIDE AND DISPLAY MARKERS ACCORDINGLY
     };
 
     // ---------------------------------------------------------------- //
@@ -210,10 +225,10 @@ export const MapProvider = ({children}: {children: any}) => {
     }, [map, locationsDB]);
 
     // useEffect(() => {
-    //     if (markersRef) {
-    //         console.log(markersRef);
+    //     if (filters && filters.length > 0) {
+    //         filterMarkers();
     //     }
-    // }, [markersRef]);
+    // }, [filters]);
 
     // ---------------------------------------------------------------- //
     // ----------------- MAP CONTEXT PROVIDER RETURN ------------------ //
@@ -228,6 +243,7 @@ export const MapProvider = ({children}: {children: any}) => {
                 initMap,
                 initMarkers,
                 initUserMarker,
+                filters,
                 filterMarkers,
 
                 // Context States

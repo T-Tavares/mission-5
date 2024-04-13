@@ -72,7 +72,6 @@ export const useDatabase = () => useContext(DatabaseContext);
 export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     const [rawDatabase, setRawDatabase] = useState<T_Database>();
     const [locationsDB, setLocationsDB] = useState<T_Database>([]);
-    // const [filteredLocationsDB, setFilteredLocationsDB] = useState<T_database>([]);
 
     const {userLocation} = useLocation();
     const {initMap} = useMap();
