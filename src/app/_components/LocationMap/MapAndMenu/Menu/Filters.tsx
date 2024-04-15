@@ -5,6 +5,7 @@ import {useDatabase} from '@/app/_context/DatabaseContext';
 import {useLocation} from '@/app/_context/LocationContext';
 
 import FilterButton from './Filters/FilterButton';
+import TypeFilterButton from './Filters/TypeFilterButton';
 
 type T_Services =
     | 'atm'
@@ -17,22 +18,28 @@ type T_Services =
     | 'trailer_hire'
     | 'tyre_pressure';
 
+type T_Types = 'service_station' | 'truck_stop';
+
 export default function Filters() {
-    const {addRemoveFilters} = useMap();
-    const {locationsDB} = useDatabase();
+    const {locationsDB, addRemoveFilters, clearFilters} = useDatabase();
     const isLocatonsDBUp = locationsDB?.length > 0 ? true : false;
 
-    const TypesFilters = () =>
+    // ---------------- TYPE FILTER BUTTONS COMPONENT ----------------- //
+
+    const TypesFiltersButtons = () =>
         stationsTypes.map(type => (
-            <FilterButton key={type._id} name={type._id as T_Services} label={type.name} icon={type.icon} />
+            <TypeFilterButton
+                key={type._id}
+                name={type._id as T_Types}
+                label={type.name}
+                icon={type.icon}
+                callback={(e: React.MouseEvent) => typesFiltersCallback(e)}
+            />
         ));
 
-    const servicesFiltersCallback = (e: Event) => {
-        const serviceClicked = e.target?.closest('button').name;
-        if (serviceClicked) addRemoveFilters(serviceClicked);
-    };
+    // --------------- SERVICE FILTER BUTTONS COMPONENT --------------- //
 
-    const ServicesFilters = () =>
+    const ServicesFiltersButtons = () =>
         services.map(service => (
             <FilterButton
                 key={service._id}
@@ -43,21 +50,39 @@ export default function Filters() {
             />
         ));
 
+    // ---------------------------------------------------------------- //
+    // ---------------------- CALLBACKS HANDLERS ---------------------- //
+    // ---------------------------------------------------------------- //
+
+    // ----------------- TYPES FILTER BUTTONS HANDLER ----------------- //
+
+    const typesFiltersCallback = (e: Event) => {};
+
+    // ---------------- SERVICE FILTER BUTTONS HANDLER ---------------- //
+
+    const servicesFiltersCallback = (e: Event) => {
+        const serviceClicked = e.target?.closest('button').name;
+        if (serviceClicked) addRemoveFilters(serviceClicked);
+    };
+
     return (
         <>
             {isLocatonsDBUp && (
                 <div className="flex flex-col">
-                    <div className="flex py-7 justify-center">
+                    <div className="flex gap-10 py-7 justify-center">
                         <h3 className="font-medium text-base ">Station Type</h3>
+                        <button onClick={clearFilters} className="font-medium text-base text-primary ">
+                            Clear Filters
+                        </button>
                     </div>
                     <div className="flex flex-col gap-4 w-[14rem] mx-auto">
-                        <TypesFilters />
+                        <TypesFiltersButtons />
                     </div>
                     <div className="flex py-7 justify-center">
                         <h3 className="font-medium text-base ">Services</h3>
                     </div>
                     <div className="flex flex-col gap-4 w-[14rem] mx-auto">
-                        <ServicesFilters />
+                        <ServicesFiltersButtons />
                     </div>
                 </div>
             )}

@@ -1,32 +1,19 @@
 import {ReactElement} from 'react';
 import {useDatabase} from '@/app/_context/DatabaseContext';
 
-type T_Services =
-    | 'atm'
-    | 'car_wash'
-    | 'engine_oils'
-    | 'ev_charging'
-    | 'food_and_drink'
-    | 'lpg_bottle_swap'
-    | 'toilets'
-    | 'trailer_hire'
-    | 'tyre_pressure';
+type T_Types = 'service_station' | 'truck_stop';
 
 type T_FilterButton = {
-    name: T_Services;
+    name: T_Types;
     label: string;
     icon?: ReactElement;
     filterType?: string;
     callback?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-export default function FilterButton({name, label, icon, callback}: T_FilterButton) {
-    const {filters} = useDatabase();
-
-    // CHECKS FOR ACTIVE FILTERS AND EMPTY FILTER ARRAY
-    let isActive: boolean | undefined;
-    if (filters?.length === 0) isActive = true;
-    else isActive = filters?.includes(name);
+export default function TypeFilterButton({name, label, icon, callback}: T_FilterButton) {
+    // TODO CHECKS FOR ACTIVE FILTERS AND EMPTY FILTER ARRAY
+    let isActive: boolean | undefined = true;
 
     // ACTIVE FILTER BUTTON CLASS
     const activeBtnClass = 'text-primary  border-gray-200';

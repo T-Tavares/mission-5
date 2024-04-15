@@ -1,11 +1,12 @@
 'use client';
+
 import ReportCard from './ReportCard';
 import Totals from './Totals';
 import {useEffect, useState} from 'react';
 import {T_Report} from '@/app/_lib/types/T_Report';
 import data from '../../../_lib/reports.json';
 
-export default async function ReportsList() {
+export default function ReportsList() {
     // const [reports, setReports] = useState<any>();
     const [reports, setReports] = useState<any>(data);
     const [reportsElements, setReportsElements] = useState<any>([]);
@@ -23,7 +24,7 @@ export default async function ReportsList() {
 
     useEffect(() => {
         const reportsList = reports
-            .map((report: T_Report) => <ReportCard report={report} />)
+            .map((report: T_Report) => <ReportCard key={`${report._id}`} report={report} />)
             .slice(0, -1) // Remove the last element from the array => The last element is the template
             .reverse(); // Order from the latest to the oldest
 
@@ -36,12 +37,18 @@ export default async function ReportsList() {
 
         setReportsTotals([totalMeetings, totalMeetingsTime, totalBlockers]);
         setReportsElements(reportsList);
-    }, [reports]);
+        console.log(reports);
+    }, []);
 
     return (
         <>
-            {reports && <Totals totals={reportsTotals} />}
-            {reports && reportsElements}
+            {!reports && <p>Loading...</p>}
+            {reports && (
+                <>
+                    <Totals totals={reportsTotals} />
+                    {reportsElements}
+                </>
+            )}
         </>
     );
 }

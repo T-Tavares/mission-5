@@ -7,29 +7,27 @@ import Stations from './Menu/Stations';
 
 export default function Menu() {
     const [selectedDiv, setSelectedDiv] = useState(1);
+    const filtersCSS = selectedDiv === 1 ? '' : 'text-primary bg-gray-200/70';
+    const stationsCSS = selectedDiv === 2 ? '' : 'text-primary bg-gray-200/70';
+    // bg-gray-200/70 py-4 text-primary
 
     return (
+        // prettier-ignore
         <div className="hidden xl:flex xl:flex-col border-2 border-gray-200 rounded-l-3xl h-full ">
             <div className="flex justify-center w-[21rem]">
-                <div className="flex w-full justify-center py-4 font-medium cursor-pointer">
-                    <h3 onClick={() => setSelectedDiv(1)} className="active:scale-95 hover:scale-105">
+                <div onClick={() => setSelectedDiv(1)} className={`flex w-full justify-center font-medium cursor-pointer py-4 transition-colors ${filtersCSS} rounded-tl-3xl `}>
+                    <h3 className="active:scale-95 hover:scale-105">
                         Filters
                     </h3>
                 </div>
-                <div className="flex w-full justify-center bg-gray-200/70 py-4 text-primary font-medium cursor-pointer ">
-                    <h3 onClick={() => setSelectedDiv(2)} className="active:scale-95 hover:scale-105">
+                <div onClick={() => setSelectedDiv(2)} className={`flex w-full justify-center font-medium cursor-pointer py-4 transition-colors ${stationsCSS}`} >
+                    <h3 className="active:scale-95 hover:scale-105">
                         Stations
                     </h3>
                 </div>
             </div>
             {selectedDiv === 1 && <Filters />}
             {selectedDiv === 2 && <Stations />}
-            {/* {selectedDiv === 2 && (
-                <div className="flex flex-col items-center overflow-y-scroll">
-                    <h3 className="font-medium text-lg self-start mt-6 mb-4 ml-11">Nearest</h3>
-                    {locationsElements}
-                </div>
-            )} */}
         </div>
     );
 }

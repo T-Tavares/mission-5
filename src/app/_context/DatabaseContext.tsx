@@ -2,6 +2,8 @@
 
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import data from '../_lib/locations.json'; // temporary data
+
+import {removeDuplicateNumbers} from '../_lib/helpers';
 import {useLocation} from './LocationContext';
 import {useMap} from './MapContext';
 
@@ -46,7 +48,18 @@ type T_Location = {
 type T_Database = T_Location[] | undefined | null;
 type T_Geocode = {lat: number; lng: number} | undefined | null;
 type T_GeocodeMatrix = {lat: number; lng: number}[] | undefined | null;
+type T_Services =
+    | 'atm'
+    | 'car_wash'
+    | 'engine_oils'
+    | 'ev_charging'
+    | 'food_and_drink'
+    | 'lpg_bottle_swap'
+    | 'toilets'
+    | 'trailer_hire'
+    | 'tyre_pressure';
 
+type T_Filters = null | undefined | T_Services[];
 // ---------------------------------------------------------------- //
 // ----------------------- DATABASE CONTEXT ----------------------- //
 // ---------------------------------------------------------------- //
@@ -54,14 +67,16 @@ type T_GeocodeMatrix = {lat: number; lng: number}[] | undefined | null;
 const DatabaseContext = createContext({
     rawDatabase: undefined as T_Database,
     locationsDB: undefined as T_Database,
-    userLocation: undefined as T_Geocode,
 
-    // filteredLocationsDB: undefined as T_database,
+    filters: null as T_Filters,
+    fullFilters: null as T_Filters,
 
     fetchRawDatabase: () => {},
     updateLocationsDB: () => {},
-    // addDistanceToLocationsDB: (rawDB: T_Database, geocode: T_Geocode) => {},
-    // filterLocationsDB: () => {},
+
+    addRemoveFilters: (clickedFilter: T_Services) => {},
+    clearFilters: () => {},
+    getFilteredLocationsIDs: () => {},
 });
 
 export const useDatabase = () => useContext(DatabaseContext);
@@ -74,8 +89,21 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     const [rawDatabase, setRawDatabase] = useState<T_Database>();
     const [locationsDB, setLocationsDB] = useState<T_Database>([]);
 
+    const fullFilters: T_Filters = [
+        'atm',
+        'car_wash',
+        'engine_oils',
+        'ev_charging',
+        'food_and_drink',
+        'lpg_bottle_swap',
+        'toilets',
+        'trailer_hire',
+        'tyre_pressure',
+    ]; // This is the full list of filters for comparison logic purposes
+    // const [filters, setFilters] = useState<T_Filters>(fullFilters);
+    const [filters, setFilters] = useState<T_Filters>([]);
+
     const {userLocation} = useLocation();
-    const {initMap} = useMap();
 
     // ------------------- FETCH RAW DATA FUNCTION -------------------- //
 
@@ -172,6 +200,42 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
         setLocationsDB(sortedLocations);
     };
 
+    // ---------------------------------------------------------------- //
+    // ------------ ADD AND REMOVE FILTERS FROM LIST (ARR) ------------ //
+    // ---------------------------------------------------------------- //
+
+    const clearFilters = () => setFilters([]);
+
+    const addRemoveFilters = (clickedFilter: T_Services) => {
+        if (filters?.includes(clickedFilter)) {
+            setFilters((prevFilters: T_Filters) => prevFilters?.filter(filter => filter !== clickedFilter));
+            return;
+        }
+        setFilters((prevFilters: T_Filters) => [...(prevFilters || []), clickedFilter]);
+    };
+
+    const getFilteredLocationsIDs = () => {
+        // IF NO FILTERS RETURN ALL LOCATIONS
+        if (filters?.length === 0) return;
+
+        // IDs ARRAY PLACEHOLDER
+        const filteredIDsSum: number[] = [];
+
+        // GETTING FILTERED IDS
+        filters?.forEach(filter => {
+            locationsDB?.forEach(location => {
+                if (location.services[filter]) {
+                    filteredIDsSum.push(location._id);
+                }
+            });
+        });
+
+        // REMOVE DUPLICATES AND ASCENDING SORT
+        const filteredMarkersIDs = removeDuplicateNumbers(filteredIDsSum).sort((a, b) => a - b);
+
+        return filteredMarkersIDs;
+    };
+
     /* 
         The useEffects work as an async await on this project.
         Since some components and logic depend on the previous useEffects to be completed.
@@ -190,16 +254,21 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
         }
     }, [userLocation]);
 
-    // const filterLocationsDB = (locationsDB: T_database) => {};
-
     return (
         <DatabaseContext.Provider
             value={{
                 rawDatabase,
                 fetchRawDatabase,
                 updateLocationsDB,
+
                 locationsDB,
-                userLocation,
+
+                filters,
+                fullFilters,
+
+                clearFilters,
+                addRemoveFilters,
+                getFilteredLocationsIDs,
             }}
         >
             {children}
