@@ -141,6 +141,16 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     // -------------- GOOGLE API FETCH DISTANCE MATRIX  --------------- //
 
     const _getDistanceMatrix = async (geocodeMatrix: {lat: number; lng: number}[]) => {
+        /* 
+            This function is here for reference.
+
+            Runnign the matrix API became very costy, so I decided to use a JSON file 
+            for demonstrations instead.
+            Everything work the same way. except the database already have the distance and duration values.
+            they are completely random and not accurate. Is just for demonstration purposes.
+            
+        */
+
         // Initialize Google API Service
 
         const {DistanceMatrixService} = (await google.maps.importLibrary('routes')) as google.maps.RoutesLibrary;
@@ -162,15 +172,24 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
 
         // return response;
     };
+
     // ---------------------------------------------------------------- //
     // ------------------- BUILD LOCATIONS DATABASE ------------------- //
     // ----------- COMBINE DISTANCE MATRIX TO RAW DATABASE ------------ //
     // ---------------------------------------------------------------- //
     /* 
 
-
 */
     const _addDistanceToLocationsDB = async () => {
+        /* 
+            This function is here for reference.
+
+            Runnign the matrix API became very costy, so I decided to use a JSON file 
+            for demonstrations instead.
+            Everything work the same way. except the database already have the distance and duration values.
+            they are completely random and not accurate. Is just for demonstration purposes.
+        */
+
         const geocodeMatrix = [...(await _getGeocodeMatrix(rawDatabase))];
         const distanceMatrix = await _getDistanceMatrix(geocodeMatrix);
 
@@ -195,9 +214,25 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     };
 
     const updateLocationsDB = async () => {
-        const updatedLocations = await _addDistanceToLocationsDB();
-        const sortedLocations = sortLocationsDB(updatedLocations);
-        setLocationsDB(sortedLocations);
+        /* 
+            Code that uses Google API
+
+            const updatedLocations = await _addDistanceToLocationsDB();
+            const sortedLocations = sortLocationsDB(updatedLocations);
+            const sortedLocations = sortLocationsDB(locationsDB);
+            setLocationsDB(sortedLocations); 
+        */
+
+        /* 
+            Why I have a setTimeout here?
+
+            Because with the API theres a await time until the DB arrives, everything can run smoothly
+            I have to mimic this on the static page in order to not change the logic behind it.
+        */
+        setTimeout(() => {
+            const sortedLocations = sortLocationsDB(rawDatabase);
+            setLocationsDB(sortedLocations);
+        }, 2000);
     };
 
     // ---------------------------------------------------------------- //
@@ -214,9 +249,9 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
         setFilters((prevFilters: T_Filters) => [...(prevFilters || []), clickedFilter]);
     };
 
-    const getFilteredLocationsIDs = () => {
+    const getFilteredLocationsIDs = (): number[] | [] => {
         // IF NO FILTERS RETURN ALL LOCATIONS
-        if (filters?.length === 0) return;
+        if (filters?.length === 0) return [];
 
         // IDs ARRAY PLACEHOLDER
         const filteredIDsSum: number[] = [];
@@ -244,6 +279,7 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
         They also CAN NOT be used in a single line if. It'll throw the useEffect into an infinite loop in most cases.
     
     */
+
     useEffect(() => {
         setRawDatabase(data);
     }, []);

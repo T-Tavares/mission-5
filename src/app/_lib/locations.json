@@ -4,6 +4,8 @@
         "name": "Auckland Z Energy",
         "address": "14 This place is amazing",
         "price": 6.99,
+        "distance": {"text": "1.2 km", "value": 1200},
+        "duration": {"text": "5 mins", "value": 300},
         "openingHours": {
             "from": 8,
             "to": 21
@@ -30,6 +32,8 @@
         "name": "Auckland Z Energy",
         "address": "14 This place is amazing",
         "price": 12.99,
+        "distance": {"text": "2.2 km", "value": 2200},
+        "duration": {"text": "10 mins", "value": 600},
         "openingHours": {
             "from": 8,
             "to": 21
@@ -56,6 +60,8 @@
         "name": "Auckland Z Energy",
         "address": "14 This place is amazing",
         "price": 9.99,
+        "distance": {"text": "3.2 km", "value": 3200},
+        "duration": {"text": "15 mins", "value": 900},
         "openingHours": {
             "from": 8,
             "to": 21
@@ -82,6 +88,8 @@
         "name": "Z Energy",
         "address": "14 This place is amazing",
         "price": 5.99,
+        "distance": {"text": "4.2 km", "value": 4200},
+        "duration": {"text": "20 mins", "value": 1200},
         "openingHours": {
             "from": 8,
             "to": 21
@@ -108,6 +116,8 @@
         "name": "Gas Station",
         "address": "38 The best place",
         "price": 7,
+        "distance": {"text": "5.2 km", "value": 5200},
+        "duration": {"text": "24 mins", "value": 1400},
         "openingHours": {
             "from": 8,
             "to": 20
@@ -134,6 +144,8 @@
         "name": "Service Station",
         "address": "23 Street Avenue",
         "price": 5.99,
+        "distance": {"text": "6.2 km", "value": 6200},
+        "duration": {"text": "30 mins", "value": 1800},
         "openingHours": {
             "from": 6,
             "to": 22
@@ -160,13 +172,15 @@
         "name": "Z Energy Services",
         "address": "35 The best place",
         "price": 4.5,
+        "distance": {"text": "7.2 km", "value": 7200},
+        "duration": {"text": "35 mins", "value": 2200},
         "openingHours": {
             "from": 10,
             "to": 22
         },
         "geocode": {
-            "lat": -46,
-            "lng": 175
+            "lat": -46.344591,
+            "lng": 175.243791
         },
         "type": "Truck Stop",
         "services": {
@@ -186,6 +200,8 @@
         "name": "Z Energy Services",
         "address": "35 The best place",
         "price": 4.5,
+        "distance": {"text": "8.2 km", "value": 8200},
+        "duration": {"text": "40 mins", "value": 2600},
         "openingHours": {
             "from": 10,
             "to": 22
@@ -212,6 +228,8 @@
         "name": "Z Energy Station",
         "address": "1 Main Street",
         "price": 4.3,
+        "distance": {"text": "9.2 km", "value": 9200},
+        "duration": {"text": "45 mins", "value": 3200},
         "openingHours": {"from": 6, "to": 20},
         "geocode": {"lat": -43.543591, "lng": 172.68016},
         "type": "Truck Stop",
@@ -232,6 +250,8 @@
         "name": "Service Station",
         "address": "23 Street Avenue",
         "price": 6.5,
+        "distance": {"text": "10.2 km", "value": 10200},
+        "duration": {"text": "50 mins", "value": 3600},
         "openingHours": {"from": 10, "to": 22},
         "geocode": {"lat": -43.518589, "lng": 172.542193},
         "type": "Service Station",

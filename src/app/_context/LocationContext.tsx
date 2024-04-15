@@ -1,7 +1,6 @@
 'use client';
 
-import {time} from 'console';
-import {createContext, useContext, useState, useEffect} from 'react';
+import {createContext, useContext, useState} from 'react';
 
 // ---------------------------------------------------------------- //
 // ------------------------ LOCATION TYPES ------------------------ //

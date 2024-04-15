@@ -166,6 +166,7 @@ export const MapProvider = ({children}: {children: any}) => {
         });
 
         const markersArr = await Promise.all(markersPromises);
+
         markersRef.current = markersArr;
     };
 
@@ -175,7 +176,7 @@ export const MapProvider = ({children}: {children: any}) => {
 
     const showHideMarkers = () => {
         // ON RESET DISPLAY ALL MARKERS
-        if (filters?.length === 0) {
+        if (filters?.length === 0 || filters === null) {
             markersRef.current?.forEach(marker => marker.marker.setMap(map));
             return;
         }
@@ -184,9 +185,9 @@ export const MapProvider = ({children}: {children: any}) => {
         const filteredMarkersIDs = getFilteredLocationsIDs();
 
         // DISPLAY FILTERED MARKERS (LOCATIONS) AND HIDE THE REST
-        markersRef.current?.forEach(marker => {
-            const isFiltered = filteredMarkersIDs.includes(marker._id);
-            isFiltered ? marker.marker.setMap(map) : marker.marker.setMap(null);
+        markersRef.current?.forEach(markerObj => {
+            const isFiltered = filteredMarkersIDs.includes(markerObj._id);
+            isFiltered ? markerObj.marker.setMap(map) : markerObj.marker.setMap(null);
         });
     };
 
@@ -232,7 +233,9 @@ export const MapProvider = ({children}: {children: any}) => {
 
     useEffect(() => {
         if (filters?.length === fullFilters?.length) return clearFilters(); // If filter array is full => Reset Filters)
-        showHideMarkers();
+        if (markersRef.current) {
+            showHideMarkers();
+        }
     }, [filters]);
 
     // ---------------------------------------------------------------- //
