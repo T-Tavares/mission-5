@@ -1,6 +1,6 @@
 'use client';
 
-import LocationCard from '@/app/_components/LocationMap/MapAndMenu/Menu/Stations/card';
+import LocationCard from '@/app/_components/LocationMap/MapAndMenu/Menu/Stations/LocationCard';
 import {useDatabase} from '@/app/_context/DatabaseContext';
 import {ReactElement, useEffect, useState} from 'react';
 

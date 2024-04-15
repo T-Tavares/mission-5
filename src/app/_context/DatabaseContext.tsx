@@ -1,4 +1,5 @@
 'use client';
+
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import data from '../_lib/locations.json'; // temporary data
 import {useLocation} from './LocationContext';
@@ -138,12 +139,7 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
     // ----------- COMBINE DISTANCE MATRIX TO RAW DATABASE ------------ //
     // ---------------------------------------------------------------- //
     /* 
-    TODO 
-    REBUILD updateLocationsDB
-    _addDistanceToLocationsDB as internal function
 
-    test ways to store the markers as an array so they can be shown/hidden 
-    as we filter the DB further down.
 
 */
     const _addDistanceToLocationsDB = async () => {
@@ -152,10 +148,6 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
 
         const updatedLocationsDB = rawDatabase
             ?.map((location: any, index: number) => {
-                //
-                // TO KEEP THE INTEGRITY OF THE DB
-                // IF GOOGLE CANT CALCULATE DISTANCE FOR SOME REASOM... RETURNS N/A
-
                 if (distanceMatrix.rows[0].elements[index].status !== 'OK') return;
 
                 return {
@@ -165,6 +157,7 @@ export const DatabaseProvider = ({children}: {children: React.ReactNode}) => {
                 };
             })
             .filter((location: any) => location);
+        //  .filter() GET RID OF UNDEFINED VALUES IN CASE GOOGLE CAN'T CALCULATE DISTANCE
 
         return updatedLocationsDB;
     };

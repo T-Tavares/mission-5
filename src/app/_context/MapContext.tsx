@@ -4,6 +4,7 @@ import React, {createContext, useContext, useEffect, useState, useRef} from 'rea
 import {useLocation} from './LocationContext';
 import {useDatabase} from './DatabaseContext';
 import {Loader} from '@googlemaps/js-api-loader';
+import {removeDuplicateNumbers} from '../_lib/helpers';
 
 // ---------------------------------------------------------------- //
 // -------------------------- MAP TYPES --------------------------- //
@@ -48,16 +49,17 @@ type T_Location = {
 };
 type T_Database = T_Location[] | undefined | null;
 type T_MarkersRef = Array<any> | null | undefined;
+
 type T_Services =
-    | 'engine_oils'
-    | 'trailer_hire'
-    | 'car_wash'
-    | 'tyre_pressure'
-    | 'food_and_drink'
-    | 'toilets'
     | 'atm'
+    | 'car_wash'
+    | 'engine_oils'
     | 'ev_charging'
-    | 'lpg_bottle_swap';
+    | 'food_and_drink'
+    | 'lpg_bottle_swap'
+    | 'toilets'
+    | 'trailer_hire'
+    | 'tyre_pressure';
 
 type T_Filters = null | undefined | T_Services[];
 // ---------------------------------------------------------------- //
@@ -76,7 +78,7 @@ const MapContext = createContext({
     initMarkers: () => {},
     initUserMarker: () => {},
 
-    filterMarkers: () => {},
+    addRemoveFilters: (clickedFilter: T_Services) => {},
 });
 
 export const useMap = () => useContext(MapContext);
@@ -93,7 +95,19 @@ export const MapProvider = ({children}: {children: any}) => {
     const mapRef = useRef<HTMLElement>(null);
     const markersRef = useRef<Array<any> | null>(null);
 
-    const [filters, setFilters] = useState<T_Filters>(['toilets', 'car_wash']);
+    const fullFilters: T_Filters = [
+        'atm',
+        'car_wash',
+        'engine_oils',
+        'ev_charging',
+        'food_and_drink',
+        'lpg_bottle_swap',
+        'toilets',
+        'trailer_hire',
+        'tyre_pressure',
+    ]; // This is the full list of filters for comparison logic purposes
+    // const [filters, setFilters] = useState<T_Filters>(fullFilters);
+    const [filters, setFilters] = useState<T_Filters>([]);
 
     // ----------- useLocation() AND useDatabase() CONTEXTS ----------- //
 
@@ -104,7 +118,9 @@ export const MapProvider = ({children}: {children: any}) => {
     // ---------------------- useMap() METHODS ------------------------ //
     // ---------------------------------------------------------------- //
 
+    // ---------------------------------------------------------------- //
     // ------------------- INITIALIZE MAP FUNCTION -------------------- //
+    // ---------------------------------------------------------------- //
 
     const initMap = async () => {
         const loader = new Loader({
@@ -128,7 +144,9 @@ export const MapProvider = ({children}: {children: any}) => {
         setMap(map);
     };
 
+    // ---------------------------------------------------------------- //
     // --------------- INITIALIZE USER MARKER FUNCTION ---------------- //
+    // ---------------------------------------------------------------- //
 
     const initUserMarker = async () => {
         const {AdvancedMarkerElement} = (await google.maps.importLibrary('marker')) as google.maps.MarkerLibrary;
@@ -148,7 +166,9 @@ export const MapProvider = ({children}: {children: any}) => {
         const marker = new AdvancedMarkerElement(markerOptions);
     };
 
+    // ----------------------------------------------------------------- //
     // ------------------- INITIALIZE MARKERS FUNCTION ----------------- //
+    // ----------------------------------------------------------------- //
 
     const initMarkers = async () => {
         const markersPromises = (locationsDB || []).map(async (location: T_Location) => {
@@ -178,12 +198,45 @@ export const MapProvider = ({children}: {children: any}) => {
         markersRef.current = markersArr;
     };
 
-    const filterMarkers = () => {
-        // IF ALL FILTER UP MAKE IT FILTERS STATE EMPTY
-        // ---- IF FILTERS STATE IS EMPTY SHOW ALL MARKERS
-        // ---- IF FILTERS STATE IS NOT EMPTY SHOW FILTERED MARKERS
-        // --------- FOREACH LOOP THROUGH LOCATIONDB TO GET IDS OF MARKERS TO BE DISPLAYED
-        // --------- FOREACH LOOP THROUGH MARKERSREF TO HIDE AND DISPLAY MARKERS ACCORDINGLY
+    // ---------------------------------------------------------------- //
+    // ------------ ADD AND REMOVE FILTERS FROM LIST (ARR) ------------ //
+    // ---------------------------------------------------------------- //
+
+    const addRemoveFilters = (clickedFilter: T_Services) => {
+        if (filters?.includes(clickedFilter)) {
+            setFilters((prevFilters: T_Filters) => prevFilters?.filter(filter => filter !== clickedFilter));
+            return;
+        }
+        setFilters((prevFilters: T_Filters) => [...(prevFilters || []), clickedFilter]);
+    };
+
+    // ---------------------------------------------------------------- //
+    // ---- SHOW AND HIDE MARKERS ACCORDING TO FILTERS LIST (ARR) ----- //
+    // ---------------------------------------------------------------- //
+
+    const showHideMarkers = () => {
+        // ON RESET DISPLAY ALL MARKERS
+        if (filters?.length === 0) {
+            markersRef.current?.forEach(marker => marker.marker.setMap(map));
+            return;
+        }
+        // GETTING FILTERED MARKERS IDS
+        const filteredMarkersIDsSum: number[] = [];
+        filters?.forEach(filter => {
+            locationsDB?.forEach(location => {
+                if (location.services[filter]) {
+                    filteredMarkersIDsSum.push(location._id);
+                }
+            });
+        });
+
+        const filteredMarkersIDs = removeDuplicateNumbers(filteredMarkersIDsSum).sort((a, b) => a - b);
+
+        // DISPLAY FILTERED MARKERS (LOCATIONS) AND HIDE THE REST
+        markersRef.current?.forEach(marker => {
+            const isFiltered = filteredMarkersIDs.includes(marker._id);
+            isFiltered ? marker.marker.setMap(map) : marker.marker.setMap(null);
+        });
     };
 
     // ---------------------------------------------------------------- //
@@ -224,11 +277,12 @@ export const MapProvider = ({children}: {children: any}) => {
         }
     }, [map, locationsDB]);
 
-    // useEffect(() => {
-    //     if (filters && filters.length > 0) {
-    //         filterMarkers();
-    //     }
-    // }, [filters]);
+    // ------------ SET AND DISPLAY/HIDE FILTERS USEEFFECT ------------ //
+
+    useEffect(() => {
+        if (filters?.length === fullFilters.length) return setFilters([]); // If filter array is full => Reset Filters)
+        showHideMarkers();
+    }, [filters]);
 
     // ---------------------------------------------------------------- //
     // ----------------- MAP CONTEXT PROVIDER RETURN ------------------ //
@@ -244,7 +298,7 @@ export const MapProvider = ({children}: {children: any}) => {
                 initMarkers,
                 initUserMarker,
                 filters,
-                filterMarkers,
+                addRemoveFilters,
 
                 // Context States
                 userLocation,
