@@ -22,6 +22,7 @@ type T_FilterButton = {
 
 export default function FilterButton({name, label, icon, callback}: T_FilterButton) {
     const {filters} = useDatabase();
+    console.log(icon);
 
     // CHECKS FOR ACTIVE FILTERS AND EMPTY FILTER ARRAY
     let isActive: boolean | undefined;
@@ -41,7 +42,7 @@ export default function FilterButton({name, label, icon, callback}: T_FilterButt
                         isActive ? activeBtnClass : 'bg-gray-200'
                     }`}
                 >
-                    {icon}
+                    <div className="absolute text-[1.4rem] top-2 left-5">{icon}</div>
                     {label}
                 </button>
             </div>

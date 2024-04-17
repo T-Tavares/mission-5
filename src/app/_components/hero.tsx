@@ -1,41 +1,48 @@
-import { BsFuelPumpFill } from "react-icons/bs"
-import { FaTabletAlt } from "react-icons/fa"
-import { services } from "../_lib/data"
-import Link from "next/link"
-
-
+import {BsFuelPumpFill} from 'react-icons/bs';
+import {FaTabletAlt} from 'react-icons/fa';
+import {services} from '../_lib/data';
+import Link from 'next/link';
 
 const Hero = () => {
-  return (
-    <div className="flex flex-col lg:px-8 pt-[4rem] w-full">
+    return (
+        <div className="flex flex-col lg:px-8 pt-[4rem] w-full">
+            <section className="hidden xl:flex xl:justify-center ">
+                <div className="flex justify-center max-w-[80rem] h-[37rem] relative ">
+                    <h1 className="text-[2.6rem] font-medium absolute left-[5rem] top-3">Z is for New Zealand</h1>
+                    <img src="hero.png" className="" />
+                    <div className="flex flex-col top-[11rem] left-[5rem] absolute w-[25rem]">
+                        <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
+                        <div className="flex w-[12rem] pt-8 ml-1">
+                            <Link href="/location">
+                                <button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">
+                                    Find a Station
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <section className="hidden xl:flex xl:justify-center ">      
-        <div className="flex justify-center max-w-[80rem] h-[37rem] relative ">
-          <h1 className="text-[2.6rem] font-medium absolute left-[5rem] top-3">Z is for New Zealand</h1>
-          <img src="hero.png" className=""/>
-          <div className="flex flex-col top-[11rem] left-[5rem] absolute w-[25rem]">
-            <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
-            <div className='flex w-[12rem] pt-8 ml-1'>
-              <Link href="/location"><button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button></Link>
-          </div>
-          </div>
-        </div>
-    </section>
-
-    {/*---------- Mobile hero ----------*/}
-    <section className="flex justify-center xl:hidden ">      
-        <div className="flex flex-col  justify-center max-w-[80rem] h-[37rem] relative -mt-10">
-          <h1 className="text-[2.6rem] mx-auto pb-10 font-medium left-[5rem] -mt-[8rem] lg:mt-[2rem]">Z is for New Zealand</h1>
-          <img src="hero-mobile.png" className="h-[20rem]  lg:h-[30rem]"/>
-          <div className="flex flex-col top-[11rem] pl-2 sm:left-[5rem] absolute w-[25rem]">
-            <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
-            <div className='flex w-[12rem] pt-8 ml-1'>
-              <Link href="/location"><button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">Find a Station</button></Link>
-          </div>
-          </div>
-        </div>
-    </section>
-    {/* ------------------------------- */}
+            {/*---------- Mobile hero ----------*/}
+            <section className="flex justify-center xl:hidden ">
+                <div className="flex flex-col  justify-center max-w-[80rem] h-[37rem] relative -mt-10">
+                    <h1 className="text-[2.6rem] mx-auto pb-10 font-medium left-[5rem] -mt-[8rem] lg:mt-[2rem]">
+                        Z is for New Zealand
+                    </h1>
+                    <img src="hero-mobile.png" className="h-[20rem]  lg:h-[30rem]" />
+                    <div className="flex flex-col top-[11rem] pl-2 sm:left-[5rem] absolute w-[25rem]">
+                        <h2 className="text-[2rem] text-white">We're here to keep our communities and whānau moving</h2>
+                        <div className="flex w-[12rem] pt-8 ml-1">
+                            <Link href="/location">
+                                <button className="px-8 p-3 mt-2 w-full whitespace-nowrap text-black text-lg font-normal rounded-full bg-action transition-all duration-400 hover:scale-105 active:scale-100">
+                                    Find a Station
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/* ------------------------------- */}
 
             {/*---------- Mobile Second Section ----------*/}
             <section className="flex flex-col mx-auto xl:hidden">
@@ -128,9 +135,11 @@ const Hero = () => {
                             </p>
                         </div>
                         <div className="flex w-[13rem] py-9 ">
-                            <Link href="/reports"><button className="px-9 py-2 w-full whitespace-nowrap text-primary text-lg font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">
-                                Find out more
-                            </button></Link>
+                            <Link href="/reports">
+                                <button className="px-9 py-2 w-full whitespace-nowrap text-primary text-lg font-medium rounded-full border-2 border-primary transition-all duration-400 hover:scale-105 hover:bg-primary hover:text-white active:scale-100">
+                                    Find out more
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

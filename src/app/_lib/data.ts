@@ -41,17 +41,16 @@ export const about = [
     {name: 'Corporate centre', href: '#'},
 ] as const;
 
-const iconsTailwindClass = 'absolute text-[1.4rem] top-2 left-5';
 export const stationsTypes = [
     {
         _id: 'service_station',
         name: 'Service Station',
-        icon: React.createElement(BsFuelPumpFill, {className: iconsTailwindClass}),
+        icon: React.createElement(BsFuelPumpFill),
     },
     {
         _id: 'truck_stop',
         name: 'Truck Stop',
-        icon: React.createElement(RiTruckFill, {className: iconsTailwindClass}),
+        icon: React.createElement(RiTruckFill),
     },
 ];
 
@@ -59,46 +58,46 @@ export const services = [
     {
         _id: 'atm',
         name: 'ATM',
-        icon: React.createElement(MdLocalAtm, {className: iconsTailwindClass}),
+        icon: React.createElement(MdLocalAtm),
     },
     {
         _id: 'car_wash',
         name: 'Car wash',
-        icon: React.createElement(BiSolidCarWash, {className: iconsTailwindClass}),
+        icon: React.createElement(BiSolidCarWash),
     },
     {
         _id: 'engine_oils',
         name: 'Engine Oils',
-        icon: React.createElement(FaOilCan, {className: iconsTailwindClass}),
+        icon: React.createElement(FaOilCan),
     },
     {
         _id: 'ev_charging',
         name: 'EV Charging',
-        icon: React.createElement(RiChargingPileFill, {className: iconsTailwindClass}),
+        icon: React.createElement(RiChargingPileFill),
     },
     {
         _id: 'food_and_drink',
         name: 'Food and drink',
-        icon: React.createElement(FaUtensils, {className: iconsTailwindClass}),
+        icon: React.createElement(FaUtensils),
     },
     {
         _id: 'lpg_bottle_swap',
         name: 'LPG bottle swap',
-        icon: React.createElement(MdGasMeter, {className: iconsTailwindClass}),
+        icon: React.createElement(MdGasMeter),
     },
     {
         _id: 'toiets',
         name: 'Toilets',
-        icon: React.createElement(BiMaleFemale, {className: iconsTailwindClass}),
+        icon: React.createElement(BiMaleFemale),
     },
     {
         _id: 'trailer_hire',
         name: 'Trailer Hire',
-        icon: React.createElement(FaTrailer, {className: iconsTailwindClass}),
+        icon: React.createElement(FaTrailer),
     },
     {
         _id: 'tyre_pressure',
         name: 'Tyre Pressure',
-        icon: React.createElement(GiCarWheel, {className: iconsTailwindClass}),
+        icon: React.createElement(GiCarWheel),
     },
 ] as const;

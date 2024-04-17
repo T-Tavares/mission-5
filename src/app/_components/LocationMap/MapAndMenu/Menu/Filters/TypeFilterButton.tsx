@@ -28,7 +28,7 @@ export default function TypeFilterButton({name, label, icon, callback}: T_Filter
                         isActive ? activeBtnClass : 'bg-gray-200'
                     }`}
                 >
-                    {icon}
+                    <div className="absolute text-[1.4rem] top-2 left-5">{icon}</div>
                     {label}
                 </button>
             </div>
